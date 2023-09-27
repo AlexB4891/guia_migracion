@@ -1,0 +1,27 @@
+h1.title, .title.h1 {
+    margin-top: 35px;
+}
+p.subtitle {
+    margin-top: 0.7em;
+    margin-bottom: -3.5em;
+}
+.lead {
+    font-size: 0.90rem;
+    font-weight: 200;
+}
+#title-block-header {
+    margin-block-end: -3rem;
+    position: relative;
+    margin-top: -1px;
+}
+header {
+  background-image: url('Banner2.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  
+}
+
+div {
+  background-color: rgba(255, 255, 255, 0.05)   /* 35% opaque white */;
+  padding: 0.95em;
+}

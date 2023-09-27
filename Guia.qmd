@@ -1,9 +1,9 @@
 ---
-title: "Introducción al lenguaje de programación R para el análisis de los flujos migratorios del Ecuador"
-author: "Alex Bajaña"
+title: "Autor: Alex Bajaña"
 format: html
 editor: visual
 toc: TRUE
+css: css2.css
 ---
 
 # Clase 1:
