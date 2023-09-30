@@ -1,0 +1,279 @@
+---
+title: "Top errores comunes"
+format: html
+editor: visual
+css: css_guia_errores.css
+---
+
+# Introducción:
+
+Al empezar a prigramar en R es normal tener errores en nuestro código que evitan que este corra como deseamos, lo cual puede ser frustrante e incluso puede hacer que nos desanimemos de aprender este lenguaje. A pesar de ello, el esfuerzo continuo y la práctica harán que se cometa menos errores y en caso de hacerlo, saber solucionarlos de manera eficiente.
+
+Ahora presentaremos algunos de los errores más comunes que ocurren al momento de de hacer un código y cómo se pueden solucionar. Cabe mencionar que puede que tú error no se contemple aquí, sin embargo podemos usar internet para esos casos :)
+
+# Errores más comunes
+
+## 1. Paréntesis, llaves, corchetes, comillas que no se "cierran"
+
+Uno de los errores más comunes es el olvidar cerrar los paréntesis, llaves, corchetes, etc. Veamos un ejemplo
+
+```{r, eval=FALSE}
+# No cerrar las llaves
+x <- 5
+if (x > 10){
+  print("mayor")
+  else{
+    print("menor")
+}
+
+# No cerrar los paréntesis de la función
+mean(c(1,4,7,9,3)
+
+```
+
+Es fácil detectarles cuando es un código fácil, pero mientras más código vayamos escribiendo esto puede tornarse difícil de observar. Afrotunadamente, la mayoría de entornos de desarrollo, como RStudio, detectan estos errores y nos ayudan a ver en qué lado se encuentran.
+
+Otra froma de este error es el siguiente
+
+```{r, eval=FALSE}
+#Olvidar cerrar comillas o no ponerlas
+
+install.packages("ggplot2)
+
+install.packages(ggplot2)                                  
+```
+
+Por suerte como se mencionó, los entornos done se trabajan suelen poner automáticamente el par de llaves, comillas o paréntesis cuando escribimos.
+
+## 2. Usar funciones que no estén instaladas o cargadas
+
+Este error se puede ver de la siguiente manera:
+
+```{r warning=TRUE, eval=FALSE}
+ggplot(data, aes(x = x, y = y))+
+  geom_point
+## Error in ggplot(data, aes(x = x, y = y)) : could not find function "ggplot"
+```
+
+Esto significa que no hemos cargado la libreria que contiene esta función o bien no hemos instalado el paquete que la contiene.
+
+Se soluciona fácilmente de la siguiente manera
+
+```{r, eval=FALSE}
+#instalar la libreria
+install.packages("ggplot2")
+#Cargar la misma
+library(ggplot2)
+```
+
+## 3. Escribir mal el nombre de una función, variable o paquete.
+
+Este error se da cuando escribimos mal un nombre como por ejemplo
+
+```{r, eval=FALSE}
+# Escribir mal el nombre de la función "mean()"
+meun(c(1,2,4,7,9)) 
+
+# Declarar un objeto y escribir mal su nombre
+migracion_mes <- c(1:12) 
+print(migracion_meses)
+
+# Cargar un paquete mal escrito, este caso "tidyverse"
+library(tydiverse)
+```
+
+Para solucionar estos errores basta con corregir los nombres.
+
+Si has corregido los nombres y estas seguro de ello pero aún sigues teniendo error del tipo "object '...' is not found", puede que sea que no hayas definido el objeto antes y debas correr el código nuevamente. Esto suele pasar porque tratamos de usar una función, objeto o datos que aún no se han cargado.
+
+## 4. Argumentos de las funciones
+
+Algunas funciones en R requieren de argumentos específicos para funcionar, por lo que si omitimos alguno de estos, o lo ponemos incorrectamente, nuestra función no se va a ejecutar. Veamos algunos ejemplos
+
+```{r ,eval=FALSE}
+# No especificar un argumento necesario
+rnorm()
+## Error in rnorm() : argument "n" is missing, with no default
+
+# Argumento incorrecto
+rnorm(n = 3, var = 1)
+##Error in rnorm(n = 3, var = 1) : unused argument (var = 1)
+
+# Argumento mal escrito
+mean(c(1,3,7,NA), narm = TRUE)
+##NA
+```
+
+Observamos que en la primera función no hemos indicado el argumento "n", que si lo hicimos en la segunda, en cambio, en esta otra hemos usado "var=1", la cual no tiene sentido dentro de la definición de esta función y por último, en la tercera función nos devuelve un valor que no tiene sentido, debido a que hemos errado en escribir el argumento de la función "narm". La forma correcta será la siguiente
+
+```{r, eval=FALSE}
+rnorm(n = 3, sd = 1)
+##-0.2978812  0.2009715 -1.3841939
+
+mean(c(1,3,7,NA), na.rm = TRUE)
+## 3.666667
+```
+
+Si no se está seguro sobre los argumentos de una función siempre podemos recurrir a la ayuda de R usando `?nombre_de_la_función` o `help(nombre_de_la_función)` por ejemplo: `help(mean)`.
+
+## 5. Tipo de dato incorrecto o inapropiado
+
+Algunos tipos de datos en R son:
+
+-   Numérico
+
+-   Caracteres
+
+-   Factor
+
+-   Lógico
+
+Algunas operaciones solo se pueden realizar con ciertos tipos de datos. Veamos un ejemplo de un error
+
+```{r,eval=FALSE}
+genero <- factor(c('hombre','mujer','hombre','hombre'))
+mean(genero)
+
+##Warning: argument is not numeric or logical: returning NA[1] NA
+```
+
+Como podemos ver el error que nos da es puesto que no podemos calcular el promedio de una variable de dos factores: hombre y mujer.
+
+Veamos otro ejemplo:
+
+```{r,eval=FALSE}
+x <- c(1,3,5)
+y <- c(1,2,'9')
+x+y
+## Error in x + y : non-numeric argument to binary operator
+```
+
+Esto ocurre puesto que "y" se toma como un valor tipo "character" y es imposible sumar números con letras. Por ello es recomendable ver la estructura que tendrá nuestra base de datos y hacer los cambios necesarios.
+
+## 6.  Olvidar signos: el "+" en ggplot2
+
+Este error ocurre cuando trabajamos con la librería `ggplot2`. El signo + se usa aquí puesto que estamos trabajando con distintas capas. Un ejemplo de cómo usar bien este símbolo es el siguiente:
+
+```{r, eval=FALSE}
+#Primero cargar la libreria
+library(ggplot2)
+
+#La primera capa son nuestros datos
+ggplot(data = migracion) +
+  #segunda capa: los valores de los ejes
+  aes(x = x, y = y) +
+  # tercera capa: el tipo de gráfico
+  geom_histogram() +
+  # puden seguir más capas
+  theme_minimal()
+```
+
+Recordemos que podemos ver más sobre esta librería escribiendo `?ggplot2` en la consola.
+
+## 7. Confundir = y ==
+
+Para asignar un valor en R podemos usar lo siguiente:
+
+-   `<-`
+
+-   `=`
+
+-   `assign()`
+
+Con cualquiera de los antes mencionados podemos "guardar" objetos en R, los cuales podemos llamar después, por ejemplo
+
+```{r,eval=FALSE}
+x <- c(1,2,3)
+x = c(1,2,3)
+assign('x',c(1,2,3))
+```
+
+Si en lugar de usar `=` usamos `==` estamos cometiendo un error. El segundo es usado para comparar, ver si algo se cumple o no. Veamos este ejemplo
+
+```{r, eval=FALSE}
+x = 5
+if(x==3){
+  print("Es tres")
+}else{
+  print("no es tres")
+}
+```
+
+Con el primer = asignamos el valor de 5 a la variable x, luego comparamos este valor con ==, para ver si es 3. Las comparaciones no se limitan solo a valores numéricos, también a otros tipos de variables.
+
+## 8. Seleccionar columnas indefinidas
+
+Este error sale a la luz cuando trabajamos con `data.frames`, aquí lo más común al iniciar a trabajar con estas estructuras es usar el símbolo `[]` el cual nos permite seleccionar columnas y filas. Veamos el siguiente ejemplo
+
+```{r, eval=FALSE}
+# Un dataframe sencillo con tres columnas y tres filas
+datafr <- data.frame(
+  pais = c('Ecuador','Perú','España'),
+  mes = c(2,4,5),
+  persona = c('Hombre', 'Mujer', 'Hombre')
+)
+
+# Nos devuelve toda la columna mes, pero solo queremos las filas cuyo mes se igual a 4 
+datafr[datafr$mes==4] 
+
+# Usamos esto
+datafr[datafr$mes==4,]
+
+#Con ello tenemos solo las filas donde la columna mes es igual a 4 y con todas las demás variables
+```
+
+Como vemos los dataframes son como tablas, tienen dos dimensiones, la primera es la fila y la segunda es la columna, el orden es importante, entonces cuando usemos \[\], recordemos que al separar con la coma ponemos estas dos dimensiones.
+
+## 9. Problemas al importar datos
+
+Al querer cargar bases de datos debemos tomar en cuanta que R busca estos datos en la carpeta donde estes trabajando, no en todo el PC, si R no encuentra este archivo, verás un error como
+
+```{r, eval=FALSE}
+dataej <- read.csv("datos.csv")
+
+## Error in file(file, "rt") : cannot open the connection
+
+## Warning: cannot open file 'datos.csv': No such file or directoryError in file(file, "rt") : cannot open the connection
+```
+
+Para poder solventar esto debemos decirle a R donde queremos trabajar. Podemos dar la dirección de trabajo con `setwd()` o en la pestaña "File". Otra alternativa es mover el archivo de datos a la carpeta donde estamos trabajando, podemos saber donde estamos trabajando con `getwd()`.
+
+## 10. Problemas al usar "\$"
+
+Este operador se usa en estructuras como data.frames o matrices, pero no es posible usarlo en objetos unidimensionales como un vector, por ejemplo:
+
+```{r, eval=FALSE}
+#Creamos un vector
+x <- c(1,2,3)
+#Nombramos a cada elemento del vector
+names(x) <- LETTERS[1:3]
+
+#El resultado:
+#A B C 
+#1 2 3
+```
+
+si intentamos acceder al elemento con el nombre "C" de este vector usando \$ nos saldrá lo siguiente:
+
+```{r, eval=FALSE}
+x$C
+##Error in x$C : $ operator is invalid for atomic vectors
+```
+
+Entonces para accder a ese elemento usando su nombre "C", debemos usar `[[]]` o bien transformar esta estructura en un dataframe, ya depende de como te guste trabajar
+
+```{r, eval=FALSE}
+#Acceder mediante [[]]
+x[['C']]
+
+#Transformar a dataframe
+x <- as.data.frame(t(x))
+#Accediendo por el nombre de la columna
+x$C
+```
+
+## 11. Algunas observaciones
+
+-   Cuando estemos trabajando, ciertas veces obtendremos mensajes como advertencias o "warnings", las cuales no interrumpen la ejecución del código, pero es bueno prestarles atención.
+
+-   Si ninguno de estos errores mencionados concuerda con el tuyo, siempre es bueno revisar la documentación, con la ayuda de R, recuerda, con `help()` o `?` .
