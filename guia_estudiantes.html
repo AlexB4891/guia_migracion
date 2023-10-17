@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Guia para el estudiante</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="guia_estudiantes_files/libs/clipboard/clipboard.min.js"></script>
+<script src="guia_estudiantes_files/libs/quarto-html/quarto.js"></script>
+<script src="guia_estudiantes_files/libs/quarto-html/popper.min.js"></script>
+<script src="guia_estudiantes_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="guia_estudiantes_files/libs/quarto-html/anchor.min.js"></script>
+<link href="guia_estudiantes_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="guia_estudiantes_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="guia_estudiantes_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="guia_estudiantes_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="guia_estudiantes_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="guia_estudiantes.css">
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#tema-1" id="toc-tema-1" class="nav-link active" data-scroll-target="#tema-1">Tema 1:</a>
+  <ul class="collapse">
+  <li><a href="#conceptos-básicos-de-r" id="toc-conceptos-básicos-de-r" class="nav-link" data-scroll-target="#conceptos-básicos-de-r">Conceptos básicos de R:</a>
+  <ul class="collapse">
+  <li><a href="#operadores" id="toc-operadores" class="nav-link" data-scroll-target="#operadores">Operadores:</a></li>
+  <li><a href="#tipos-de-datos" id="toc-tipos-de-datos" class="nav-link" data-scroll-target="#tipos-de-datos">Tipos de datos:</a></li>
+  <li><a href="#funciones-y-paquetes" id="toc-funciones-y-paquetes" class="nav-link" data-scroll-target="#funciones-y-paquetes">Funciones y paquetes:</a></li>
+  <li><a href="#directorio-de-trabajo" id="toc-directorio-de-trabajo" class="nav-link" data-scroll-target="#directorio-de-trabajo">Directorio de trabajo:</a></li>
+  <li><a href="#entorno-de-trabajo" id="toc-entorno-de-trabajo" class="nav-link" data-scroll-target="#entorno-de-trabajo">Entorno de trabajo:</a></li>
+  </ul></li>
+  <li><a href="#instalación-de-paquetes-en-r" id="toc-instalación-de-paquetes-en-r" class="nav-link" data-scroll-target="#instalación-de-paquetes-en-r">Instalación de paquetes en R</a></li>
+  <li><a href="#libros-recomendados" id="toc-libros-recomendados" class="nav-link" data-scroll-target="#libros-recomendados">Libros recomendados</a></li>
+  <li><a href="#crear-un-proyecto-en-rstudio" id="toc-crear-un-proyecto-en-rstudio" class="nav-link" data-scroll-target="#crear-un-proyecto-en-rstudio">Crear un proyecto en RStudio</a></li>
+  </ul></li>
+  <li><a href="#tema-2" id="toc-tema-2" class="nav-link" data-scroll-target="#tema-2">Tema 2:</a>
+  <ul class="collapse">
+  <li><a href="#comprendiendo-el-entorno-de-desarrollo-rstudio-con-operaciones-básicas" id="toc-comprendiendo-el-entorno-de-desarrollo-rstudio-con-operaciones-básicas" class="nav-link" data-scroll-target="#comprendiendo-el-entorno-de-desarrollo-rstudio-con-operaciones-básicas">Comprendiendo el entorno de desarrollo RStudio con operaciones básicas</a></li>
+  <li><a href="#importación-de-datos-en-r-desde-diferentes-fuentes-con-readr" id="toc-importación-de-datos-en-r-desde-diferentes-fuentes-con-readr" class="nav-link" data-scroll-target="#importación-de-datos-en-r-desde-diferentes-fuentes-con-readr">Importación de datos en R desde diferentes fuentes con <code>readr</code></a></li>
+  <li><a href="#introducción-del-concepto-de-operaciones-concatenadas-con-la-pipe" id="toc-introducción-del-concepto-de-operaciones-concatenadas-con-la-pipe" class="nav-link" data-scroll-target="#introducción-del-concepto-de-operaciones-concatenadas-con-la-pipe">Introducción del concepto de operaciones concatenadas con la pipe</a></li>
+  </ul></li>
+  <li><a href="#tema-3" id="toc-tema-3" class="nav-link" data-scroll-target="#tema-3">Tema 3</a></li>
+  <li><a href="#tema-4" id="toc-tema-4" class="nav-link" data-scroll-target="#tema-4">Tema 4</a>
+  <ul class="collapse">
+  <li><a href="#variables-aleatorias-y-sus-momentos-en-el-contexto-de-la-migración" id="toc-variables-aleatorias-y-sus-momentos-en-el-contexto-de-la-migración" class="nav-link" data-scroll-target="#variables-aleatorias-y-sus-momentos-en-el-contexto-de-la-migración">Variables aleatorias y sus momentos en el contexto de la migración</a></li>
+  <li><a href="#variables-numéricas-y-categóricas-en-el-contexto-de-la-migración" id="toc-variables-numéricas-y-categóricas-en-el-contexto-de-la-migración" class="nav-link" data-scroll-target="#variables-numéricas-y-categóricas-en-el-contexto-de-la-migración">Variables numéricas y categóricas en el contexto de la migración</a>
+  <ul class="collapse">
+  <li><a href="#variables-numéricas" id="toc-variables-numéricas" class="nav-link" data-scroll-target="#variables-numéricas">Variables numéricas:</a></li>
+  <li><a href="#variables-categóricas" id="toc-variables-categóricas" class="nav-link" data-scroll-target="#variables-categóricas">Variables categóricas:</a></li>
+  </ul></li>
+  <li><a href="#operaciones-entre-variables-usando-mutate" id="toc-operaciones-entre-variables-usando-mutate" class="nav-link" data-scroll-target="#operaciones-entre-variables-usando-mutate">Operaciones entre variables usando mutate</a></li>
+  <li><a href="#problemas-con-valores-vacíos-y-atípicos" id="toc-problemas-con-valores-vacíos-y-atípicos" class="nav-link" data-scroll-target="#problemas-con-valores-vacíos-y-atípicos">Problemas con valores vacíos y atípicos</a></li>
+  </ul></li>
+  <li><a href="#tema-4-1" id="toc-tema-4-1" class="nav-link" data-scroll-target="#tema-4-1">Tema 4:</a>
+  <ul class="collapse">
+  <li><a href="#recodificación-de-variables-con-forcats-y-mutate" id="toc-recodificación-de-variables-con-forcats-y-mutate" class="nav-link" data-scroll-target="#recodificación-de-variables-con-forcats-y-mutate">Recodificación de variables con forcats y mutate:</a></li>
+  <li><a href="#limpieza-y-transformación-de-datos-con-mutate-y-tidyr" id="toc-limpieza-y-transformación-de-datos-con-mutate-y-tidyr" class="nav-link" data-scroll-target="#limpieza-y-transformación-de-datos-con-mutate-y-tidyr">Limpieza y transformación de datos con mutate y tidyr:</a></li>
+  <li><a href="#tratamiento-de-valores-vacíos-y-atípicos-con-tidyverse" id="toc-tratamiento-de-valores-vacíos-y-atípicos-con-tidyverse" class="nav-link" data-scroll-target="#tratamiento-de-valores-vacíos-y-atípicos-con-tidyverse">Tratamiento de valores vacíos y atípicos con tidyverse:</a></li>
+  <li><a href="#diferencia-entre-variables-categóricas-ordinales-y-no-ordinales" id="toc-diferencia-entre-variables-categóricas-ordinales-y-no-ordinales" class="nav-link" data-scroll-target="#diferencia-entre-variables-categóricas-ordinales-y-no-ordinales">Diferencia entre variables categóricas ordinales y no ordinales:</a></li>
+  <li><a href="#formatos-anchos-y-largos-de-una-tabla" id="toc-formatos-anchos-y-largos-de-una-tabla" class="nav-link" data-scroll-target="#formatos-anchos-y-largos-de-una-tabla">Formatos anchos y largos de una tabla:</a></li>
+  </ul></li>
+  <li><a href="#tema-5" id="toc-tema-5" class="nav-link" data-scroll-target="#tema-5">Tema 5</a>
+  <ul class="collapse">
+  <li><a href="#la-gramática-de-los-gráficos-ggplot2" id="toc-la-gramática-de-los-gráficos-ggplot2" class="nav-link" data-scroll-target="#la-gramática-de-los-gráficos-ggplot2">La gramática de los gráficos ggplot2:</a>
+  <ul class="collapse">
+  <li><a href="#visualización-de-variables-numéricas" id="toc-visualización-de-variables-numéricas" class="nav-link" data-scroll-target="#visualización-de-variables-numéricas">Visualización de variables numéricas:</a></li>
+  <li><a href="#visualización-de-variables-categóricas" id="toc-visualización-de-variables-categóricas" class="nav-link" data-scroll-target="#visualización-de-variables-categóricas">Visualización de variables categóricas:</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#tema-7" id="toc-tema-7" class="nav-link" data-scroll-target="#tema-7">Tema 7</a></li>
+  <li><a href="#tema-8" id="toc-tema-8" class="nav-link" data-scroll-target="#tema-8">Tema 8</a>
+  <ul class="collapse">
+  <li><a href="#el-modelo-de-mínimos-cuadrados-ordinarios-con-una-sola-variable" id="toc-el-modelo-de-mínimos-cuadrados-ordinarios-con-una-sola-variable" class="nav-link" data-scroll-target="#el-modelo-de-mínimos-cuadrados-ordinarios-con-una-sola-variable">El modelo de mínimos cuadrados ordinarios con una sola variable:</a></li>
+  <li><a href="#interpretación-y-validación-de-los-parámetros-de-una-regresión" id="toc-interpretación-y-validación-de-los-parámetros-de-una-regresión" class="nav-link" data-scroll-target="#interpretación-y-validación-de-los-parámetros-de-una-regresión">Interpretación y validación de los parámetros de una regresión:</a></li>
+  <li><a href="#la-relación-entre-un-modelo-de-regresión-y-la-correlación-de-los-datos" id="toc-la-relación-entre-un-modelo-de-regresión-y-la-correlación-de-los-datos" class="nav-link" data-scroll-target="#la-relación-entre-un-modelo-de-regresión-y-la-correlación-de-los-datos">La relación entre un modelo de regresión y la correlación de los datos:</a></li>
+  </ul></li>
+  <li><a href="#tema-9" id="toc-tema-9" class="nav-link" data-scroll-target="#tema-9">Tema 9:</a>
+  <ul class="collapse">
+  <li><a href="#el-modelo-de-mínimos-cuadrados-ordinarios-con-una-sola-variable-1" id="toc-el-modelo-de-mínimos-cuadrados-ordinarios-con-una-sola-variable-1" class="nav-link" data-scroll-target="#el-modelo-de-mínimos-cuadrados-ordinarios-con-una-sola-variable-1">El modelo de mínimos cuadrados ordinarios con una sola variable:</a></li>
+  <li><a href="#interpretación-y-validación-de-los-parámetros-de-una-regresión-1" id="toc-interpretación-y-validación-de-los-parámetros-de-una-regresión-1" class="nav-link" data-scroll-target="#interpretación-y-validación-de-los-parámetros-de-una-regresión-1">Interpretación y validación de los parámetros de una regresión:</a></li>
+  <li><a href="#otros-sabores-del-modelo-de-regresión" id="toc-otros-sabores-del-modelo-de-regresión" class="nav-link" data-scroll-target="#otros-sabores-del-modelo-de-regresión">Otros sabores del modelo de regresión</a></li>
+  </ul></li>
+  <li><a href="#tema-10" id="toc-tema-10" class="nav-link" data-scroll-target="#tema-10">Tema 10</a>
+  <ul class="collapse">
+  <li><a href="#modelo-de-regresión-con-más-de-una-variable" id="toc-modelo-de-regresión-con-más-de-una-variable" class="nav-link" data-scroll-target="#modelo-de-regresión-con-más-de-una-variable">Modelo de regresión con más de una variable:</a></li>
+  </ul></li>
+  <li><a href="#tema-12" id="toc-tema-12" class="nav-link" data-scroll-target="#tema-12">Tema 12:</a>
+  <ul class="collapse">
+  <li><a href="#manejo-de-formatos-de-fecha-en-r" id="toc-manejo-de-formatos-de-fecha-en-r" class="nav-link" data-scroll-target="#manejo-de-formatos-de-fecha-en-r">Manejo de formatos de fecha en R:</a></li>
+  <li><a href="#introducción-a-la-biblioteca-tsibble-para-el-manejo-de-series-de-tiempo" id="toc-introducción-a-la-biblioteca-tsibble-para-el-manejo-de-series-de-tiempo" class="nav-link" data-scroll-target="#introducción-a-la-biblioteca-tsibble-para-el-manejo-de-series-de-tiempo">Introducción a la biblioteca tsibble para el manejo de series de tiempo:</a></li>
+  <li><a href="#partes-de-un-tsibble---clave-e-índice" id="toc-partes-de-un-tsibble---clave-e-índice" class="nav-link" data-scroll-target="#partes-de-un-tsibble---clave-e-índice">Partes de un <code>tsibble - clave e índice:</code></a></li>
+  <li><a href="#operaciones-agregadas-en-el-tiempo-y-por-grupo" id="toc-operaciones-agregadas-en-el-tiempo-y-por-grupo" class="nav-link" data-scroll-target="#operaciones-agregadas-en-el-tiempo-y-por-grupo">Operaciones agregadas en el tiempo y por grupo:</a></li>
+  </ul></li>
+  <li><a href="#tema-13" id="toc-tema-13" class="nav-link" data-scroll-target="#tema-13">Tema 13:</a></li>
+  <li><a href="#tema-14" id="toc-tema-14" class="nav-link" data-scroll-target="#tema-14">Tema 14</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Guia para el estudiante</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="tema-1" class="level1">
+<h1>Tema 1:</h1>
+<section id="conceptos-básicos-de-r" class="level2">
+<h2 class="anchored" data-anchor-id="conceptos-básicos-de-r">Conceptos básicos de R:</h2>
+<section id="operadores" class="level3">
+<h3 class="anchored" data-anchor-id="operadores">Operadores:</h3>
+<p>Los operadores son los símbolos que indican una operación específica. En R, hay varios tipos de operadores como aritméticos (+, -, *, /, %%, ^), de asignación (&lt;-, -&gt;, =), de comparación (==, !=, &lt;, &lt;=, &gt;, &gt;=), lógicos (&amp;, |, !), y otros.</p>
+</section>
+<section id="tipos-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="tipos-de-datos">Tipos de datos:</h3>
+<p>R tiene varios tipos de datos, incluyendo numéricos (enteros y reales), caracteres (texto), lógicos (verdadero o falso).</p>
+</section>
+<section id="funciones-y-paquetes" class="level3">
+<h3 class="anchored" data-anchor-id="funciones-y-paquetes">Funciones y paquetes:</h3>
+<p>Las funciones son bloques de código que realizan una tarea específica. Los paquetes son colecciones de funciones y conjuntos de datos desarrollados por la comunidad.</p>
+</section>
+<section id="directorio-de-trabajo" class="level3">
+<h3 class="anchored" data-anchor-id="directorio-de-trabajo">Directorio de trabajo:</h3>
+<p>Es el lugar en tu computadora donde R busca archivos para importar y a donde exporta, a menos que se indique lo contrario.</p>
+</section>
+<section id="entorno-de-trabajo" class="level3">
+<h3 class="anchored" data-anchor-id="entorno-de-trabajo">Entorno de trabajo:</h3>
+<p>Es donde R almacena objetos (como vectores, matrices, listas, data frames) y resultados de cálculos durante una sesión.</p>
+</section>
+</section>
+<section id="instalación-de-paquetes-en-r" class="level2">
+<h2 class="anchored" data-anchor-id="instalación-de-paquetes-en-r">Instalación de paquetes en R</h2>
+<p>Para instalar un paquete en R desde CRAN (Comprehensive R Archive Network), puedes usar la función <code>install.packages()</code>. Por ejemplo, para instalar el paquete ggplot2, usarías el siguiente comando:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Después de la instalación, necesitas cargar el paquete si quieres acceder a sus funciones. Esto se hace con la función <code>library()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="libros-recomendados" class="level2">
+<h2 class="anchored" data-anchor-id="libros-recomendados">Libros recomendados</h2>
+<p>Aquí te dejo algunos libros que podrían ser útiles para aprender más sobre programación con R y tidyverse, así como estadística moderna:</p>
+<ul>
+<li>“R for Data Science” por Hadley Wickham &amp; Garrett Grolemund.</li>
+<li>“Advanced R” por Hadley Wickham.</li>
+<li>“The Elements of Statistical Learning: Data Mining, Inference, and Prediction” por Trevor Hastie, Robert Tibshirani &amp; Jerome Friedman.</li>
+<li>“Modern Applied Statistics with S” por W.N. Venables &amp; B.D. Ripley.</li>
+</ul>
+</section>
+<section id="crear-un-proyecto-en-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="crear-un-proyecto-en-rstudio">Crear un proyecto en RStudio</h2>
+<p>Aquí te muestro cómo puedes crear un nuevo proyecto en RStudio: - Abre RStudio. - Haz clic en “File” en la barra de menú superior. - Selecciona “New Project”. - Elige la opción que prefieras (“New Directory”, “Existing Directory” o “Version Control”), luego sigue las instrucciones en pantalla. - Una vez que hayas configurado tu proyecto, haz clic en “Create Project”.</p>
+</section>
+</section>
+<section id="tema-2" class="level1">
+<h1>Tema 2:</h1>
+<section id="comprendiendo-el-entorno-de-desarrollo-rstudio-con-operaciones-básicas" class="level2">
+<h2 class="anchored" data-anchor-id="comprendiendo-el-entorno-de-desarrollo-rstudio-con-operaciones-básicas">Comprendiendo el entorno de desarrollo RStudio con operaciones básicas</h2>
+<p>RStudio es un entorno de desarrollo integrado (IDE) para R. Tiene cuatro paneles principales:</p>
+<ul>
+<li><strong>Consola (parte inferior izquierda):</strong> Aquí es donde R espera que le des instrucciones. Para ejecutarlas y obtener el resultado, pulsas Enter.</li>
+<li><strong>Editor de sintaxis o Script (parte superior izquierda):</strong> Aquí puedes escribir las instrucciones línea por línea. Las instrucciones las puedes ejecutar una a una o las puedes seleccionar y ejecutar en bloque.</li>
+<li><strong>Entorno/Environment (parte superior derecha):</strong> Aquí se irán registrando los objetos que vayas creando en la sesión de trabajo.</li>
+<li><strong>Varias pestañas (parte inferior derecha):</strong> Incluye pestañas como Files, Plots, Packages, Help y Viewer. Cada pestaña tiene su propia función, como visualizar gráficos, gestionar paquetes y buscar ayuda.</li>
+</ul>
+</section>
+<section id="importación-de-datos-en-r-desde-diferentes-fuentes-con-readr" class="level2">
+<h2 class="anchored" data-anchor-id="importación-de-datos-en-r-desde-diferentes-fuentes-con-readr">Importación de datos en R desde diferentes fuentes con <code>readr</code></h2>
+<p>Para leer archivos separados por punto y coma (;), puedes usar la función read_csv2():</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar el paquete library(readr)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Leer el archivo CSV</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(<span class="st">"ruta/del/archivo.csv"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Para leer archivos separados por tabuladores, puedes usar la función read_tsv():</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar el paquete</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Leer el archivo TSV</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"ruta/del/archivo.tsv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="introducción-del-concepto-de-operaciones-concatenadas-con-la-pipe" class="level2">
+<h2 class="anchored" data-anchor-id="introducción-del-concepto-de-operaciones-concatenadas-con-la-pipe">Introducción del concepto de operaciones concatenadas con la pipe</h2>
+<p>El operador pipe %&gt;% es útil para concatenar múltiples operaciones con dplyr. Permite escribir una secuencia de operaciones de izquierda a derecha. Por ejemplo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sin usar pipe </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">funcion3</span>(<span class="fu">funcion2</span>(<span class="fu">funcion1</span>(datos)))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando pipe</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span> <span class="fu">funcion1</span>() <span class="sc">%&gt;%</span> <span class="fu">funcion2</span>() <span class="sc">%&gt;%</span> <span class="fu">funcion3</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Aquí tienes otro ejemplo que muestra cómo se pueden encadenar varias funciones con la pipe para realizar un análisis de datos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando pipe para encadenar varias funciones en R</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(variable1 <span class="sc">&gt;</span> <span class="dv">50</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(variable2, variable3) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">media =</span> <span class="fu">mean</span>(variable3)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>En este ejemplo, primero se filtran las filas de datos donde variable1 es mayor que 50. Luego, se seleccionan variable2 y variable3. Finalmente, se calcula la media de variable3. Todo esto se hace en una sola línea gracias al operador pipe <code>%&gt;%</code>.</p>
+</section>
+</section>
+<section id="tema-3" class="level1">
+<h1>Tema 3</h1>
+<p>En las dos primeras clases, aprendiste sobre R, tidyverse y cómo importar y manejar datos. Ahora, vamos a aplicar esos conocimientos para entender la importancia del análisis de datos migratorios.</p>
+<p>Conceptos claves sobre la migración:</p>
+<ul>
+<li><em>Corrientes o flujos migratorios:</em> Se refiere a la cantidad de personas migrantes que se mueven hacia otro lugar (o desde otro) para establecerse.</li>
+<li><em>Desplazados:</em> Personas que han abandonado su lugar de origen por temor ante peligros diferentes a los que amparan el estatuto de personas refugiadas.</li>
+<li><em>Emigración:</em> Consiste en salir de un país para asentarse en otro de forma temporal o definitiva. - <em>Extranjero:</em> Una persona extranjera es aquella que no tiene la nacionalidad de un tercer país.</li>
+<li><em>Inmigrante:</em> Todas aquellas personas de otro país que ingresan en un tercero para establecerse en él.</li>
+<li><em>Migración:</em> Movimientos poblacionales hacia otros Estados o bien a otras partes de un mismo país.</li>
+<li><em>Migrante:</em> Personas que van a otro país o región con el objetivo de mejorar su vida, así como la de sus familias. Puede haber diferentes tipos de migrantes, dependiendo de las razones que le hayan empujado a migrar.</li>
+<li><em>País de origen, de tránsito o de destino:</em> El país de origen es donde sale la persona migrante. Los países de tránsito son aquellos por los que pasa la persona migrante en su trayecto hacia el país de destino, el fin de su trayecto.</li>
+<li><em>Persona refugiada:</em> Personas que “con fundados temores de ser perseguida por motivos de raza, religión, nacionalidad, pertenencia a determinado grupo social u opiniones políticas, se encuentre fuera del país de su nacionalidad y no pueda o, a causa de dichos temores, no quiera acogerse a la protección de tal país”.</li>
+<li><em>Protección:</em> Mecanismos (internacional o temporal) para proteger la integridad de las personas.</li>
+</ul>
+<p>Iniciativas para abordar el tema de la migración</p>
+<ul>
+<li><p>La Plataforma R4V es una iniciativa que coordina los esfuerzos para responder al desplazamiento de personas refugiadas y migrantes. Puedes descargar y explorar los datos proporcionados por la plataforma R4V desde su <a href="https://www.r4v.info/es/home">sitio web oficial</a>.</p></li>
+<li><p>Existen diversas experiencias y estudios que utilizan el análisis cuantitativo para entender mejor los fenómenos migratorios. Por ejemplo, la UNESCO ha desarrollado una estrategia regional sobre movilidad humana para América Latina y el Caribe.</p></li>
+<li><p>MIDAS es un sistema desarrollado por la OIM que permite a los Estados mejorar la gestión de sus operaciones fronterizas. Puedes encontrar más detalles en el sitio web oficial <a href="https://programamesoamerica.iom.int/es/inauguracion-MIDAS-dos-nuevos-puestos">de la OIM</a>.</p></li>
+</ul>
+</section>
+<section id="tema-4" class="level1">
+<h1>Tema 4</h1>
+<section id="variables-aleatorias-y-sus-momentos-en-el-contexto-de-la-migración" class="level2">
+<h2 class="anchored" data-anchor-id="variables-aleatorias-y-sus-momentos-en-el-contexto-de-la-migración">Variables aleatorias y sus momentos en el contexto de la migración</h2>
+<p>Una variable aleatoria es una función que asigna un valor numérico a cada resultado en el espacio muestral de un experimento aleatorio. Los momentos de una variable aleatoria son los valores esperados de ciertas funciones de la variable aleatoria. Aquí te presento cuatro ejemplos de variables aleatorias y sus momentos en el contexto de la migración:</p>
+<ul>
+<li><strong>Variable aleatoria “Edad al emigrar”:</strong> Esta variable puede tomar valores como la edad exacta en años que tenía una persona cuando emigró. Un momento relevante podría ser la media o valor esperado, que indicaría la edad promedio al emigrar.</li>
+<li><strong>Variable aleatoria “Número de migrantes por familia”:</strong> Esta variable puede tomar valores como el número total de miembros de una familia que han emigrado. Un momento relevante podría ser la varianza, que indicaría cuánto varía el número de migrantes por familia.</li>
+<li><strong>Variable aleatoria “Duración de la migración”:</strong> Esta variable puede tomar valores como el número total de días que duró el proceso de migración. Un momento relevante podría ser la mediana, que indicaría la duración típica de la migración.</li>
+<li><strong>Variable aleatoria “País destino”:</strong> Esta es una variable categórica que puede tomar valores como los nombres de los países a los que las personas emigran. Un momento relevante podría ser la moda, que indicaría el país destino más común.</li>
+</ul>
+</section>
+<section id="variables-numéricas-y-categóricas-en-el-contexto-de-la-migración" class="level2">
+<h2 class="anchored" data-anchor-id="variables-numéricas-y-categóricas-en-el-contexto-de-la-migración">Variables numéricas y categóricas en el contexto de la migración</h2>
+<p>Las variables numéricas son aquellas que pueden tomar cualquier valor dentro de un rango continuo y se pueden medir. Las variables categóricas son aquellas que pueden tomar uno de un número limitado de categorías o grupos. Aquí te presento cuatro ejemplos de cada tipo en el contexto de la migración:</p>
+<section id="variables-numéricas" class="level3">
+<h3 class="anchored" data-anchor-id="variables-numéricas">Variables numéricas:</h3>
+<ul>
+<li>“Edad al emigrar”</li>
+<li>“Número de migrantes por familia”</li>
+<li>“Duración de la migración”</li>
+<li>“Distancia recorrida durante la migración”</li>
+</ul>
+</section>
+<section id="variables-categóricas" class="level3">
+<h3 class="anchored" data-anchor-id="variables-categóricas">Variables categóricas:</h3>
+<ul>
+<li>“País destino”</li>
+<li>“Motivo de la migración” (por ejemplo, trabajo, educación, conflicto)</li>
+<li>“Estado legal en el país destino” (por ejemplo, ciudadano, residente permanente, visa temporal)</li>
+<li>“Nivel educativo alcanzado antes de emigrar” (por ejemplo, sin educación formal, educación primaria, educación secundaria, educación universitaria)</li>
+</ul>
+</section>
+</section>
+<section id="operaciones-entre-variables-usando-mutate" class="level2">
+<h2 class="anchored" data-anchor-id="operaciones-entre-variables-usando-mutate">Operaciones entre variables usando mutate</h2>
+<p>La función mutate en R se utiliza para crear nuevas variables que son funciones de las variables existentes. Aquí te presento cuatro ejemplos del uso de mutate en el contexto de la migración:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Asegúrate de tener tidyverse cargado </span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># NOTA: Estos ejemplos son ilustrativos </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Asumiendo que tu dataframe se llama df</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>( <span class="st">`</span><span class="at">Edad actual</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">"%Y"</span>)) <span class="sc">-</span> <span class="st">`</span><span class="at">Año de nacimiento</span><span class="st">`</span>, </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                     <span class="st">`</span><span class="at">Duración total en el país destino</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">"%Y"</span>)) <span class="sc">-</span> <span class="st">`</span><span class="at">Año de llegada al país destino</span><span class="st">`</span>, </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                     <span class="st">`</span><span class="at">Tasa de migrantes por familia</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">Número total de migrantes en la familia</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">Tamaño total de la familia</span><span class="st">`</span>, </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                     <span class="st">`</span><span class="at">Distancia recorrida por día</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">Distancia total recorrida durante la migración</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">Duración total de la migración</span><span class="st">`</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para visualizar estos datos, podemos usar ggplot2, un sistema para crear gráficos por capas en R.</p>
+</section>
+<section id="problemas-con-valores-vacíos-y-atípicos" class="level2">
+<h2 class="anchored" data-anchor-id="problemas-con-valores-vacíos-y-atípicos">Problemas con valores vacíos y atípicos</h2>
+<p>Los valores vacíos y atípicos pueden ser un gran problema en el análisis de datos. Los valores vacíos pueden surgir cuando no se recopila o registra información para ciertas observaciones o características. Los valores atípicos son puntos de datos observados que se alejan significativamente del resto. Ambos pueden afectar significativamente los resultados del análisis y deben tratarse con cuidado.</p>
+</section>
+</section>
+<section id="tema-4-1" class="level1">
+<h1>Tema 4:</h1>
+<section id="recodificación-de-variables-con-forcats-y-mutate" class="level2">
+<h2 class="anchored" data-anchor-id="recodificación-de-variables-con-forcats-y-mutate">Recodificación de variables con forcats y mutate:</h2>
+<p>La recodificación de variables es un proceso común en el análisis de datos, especialmente cuando se trabaja con datos categóricos. Por ejemplo, podríamos tener una variable categórica “País de origen” con demasiadas categorías (países). Podríamos recodificarla en una nueva variable que agrupe los países por regiones. Esto podría simplificar el análisis y hacer que los resultados sean más interpretables. Aquí tienes un ejemplo genérico de cómo hacerlo en R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar el paquete </span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Recodificar la variable</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Region =</span> <span class="fu">case_when</span>( </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                                          Pais_de_origen <span class="sc">==</span> <span class="st">"México"</span> <span class="sc">~</span> <span class="st">"América del Norte"</span>, </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                                          Pais_de_origen <span class="sc">==</span> <span class="st">"Canadá"</span> <span class="sc">~</span> <span class="st">"América del Norte"</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                                          Pais_de_origen <span class="sc">==</span> <span class="st">"Brasil"</span> <span class="sc">~</span> <span class="st">"América del Sur"</span>, </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                                          Pais_de_origen <span class="sc">==</span> <span class="st">"Argentina"</span> <span class="sc">~</span> <span class="st">"América del Sur"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="limpieza-y-transformación-de-datos-con-mutate-y-tidyr" class="level2">
+<h2 class="anchored" data-anchor-id="limpieza-y-transformación-de-datos-con-mutate-y-tidyr">Limpieza y transformación de datos con mutate y tidyr:</h2>
+<p>La limpieza de datos es un paso crucial en cualquier análisis de datos. Con mutate y tidyr, podemos realizar una serie de transformaciones para limpiar nuestros datos. Por ejemplo, podríamos tener datos sobre la “Fecha de migración” en un formato que no sea ideal para nuestro análisis. Podríamos usar mutate para transformar esta variable en una nueva variable que represente el “Año de migración”. Aquí tienes un ejemplo genérico de cómo hacerlo en R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar el paquete </span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformar la variable</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span> </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(Año<span class="at">_de_migracion =</span> <span class="fu">year</span>(Fecha_de_migracion))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="tratamiento-de-valores-vacíos-y-atípicos-con-tidyverse" class="level2">
+<h2 class="anchored" data-anchor-id="tratamiento-de-valores-vacíos-y-atípicos-con-tidyverse">Tratamiento de valores vacíos y atípicos con tidyverse:</h2>
+<p>Los valores vacíos y atípicos pueden presentar desafíos significativos en el análisis de datos. En el contexto de la migración, podríamos encontrar valores vacíos si no se recopiló información para ciertos individuos o variables. Los valores atípicos podrían surgir si hubo errores en la recopilación de datos o si hay individuos con características extremas. Podríamos tratar estos problemas eliminando las observaciones con valores vacíos o atípicos, imputando los valores vacíos con alguna medida de tendencia central como la media o la mediana, o utilizando métodos más sofisticados como la imputación múltiple.</p>
+</section>
+<section id="diferencia-entre-variables-categóricas-ordinales-y-no-ordinales" class="level2">
+<h2 class="anchored" data-anchor-id="diferencia-entre-variables-categóricas-ordinales-y-no-ordinales">Diferencia entre variables categóricas ordinales y no ordinales:</h2>
+<p>Las variables categóricas pueden ser ordinales o no ordinales. Las variables ordinales son aquellas cuyas categorías tienen un orden natural, como “Nivel educativo” (por ejemplo, primaria, secundaria, universidad). Las variables no ordinales, también conocidas como nominales, son aquellas cuyas categorías no tienen un orden natural, como “País de origen”.</p>
+</section>
+<section id="formatos-anchos-y-largos-de-una-tabla" class="level2">
+<h2 class="anchored" data-anchor-id="formatos-anchos-y-largos-de-una-tabla">Formatos anchos y largos de una tabla:</h2>
+<p>El formato ancho de una tabla es aquel en el que cada sujeto tiene una fila y cada medida tiene una columna. El formato largo es aquel en el que cada sujeto tiene varias filas, una para cada medida. Por ejemplo, si tenemos datos sobre la migración desde varios países a lo largo de varios años, el formato ancho tendría una fila para cada país y una columna para cada año. El formato largo tendría una fila para cada combinación país-año.</p>
+</section>
+</section>
+<section id="tema-5" class="level1">
+<h1>Tema 5</h1>
+<section id="la-gramática-de-los-gráficos-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="la-gramática-de-los-gráficos-ggplot2">La gramática de los gráficos ggplot2:</h2>
+<p><code>ggplot2</code> es un paquete de visualización de datos para R que ayuda a los usuarios a crear gráficos de datos, incluyendo aquellos que son multicapa, con facilidad. Fue creado por Hadley Wickham en 2005. ggplot2 es una implementación de la gramática de gráficos de Leland Wilkinson, un esquema general para la visualización de datos que divide los gráficos en componentes semánticos como escalas y capas. La gramática de gráficos es análoga a la forma en que aprender gramática puede ayudar a un estudiante a construir cientos de oraciones diferentes al aprender solo una pequeña cantidad de verbos, sustantivos y adjetivos.</p>
+<p>Aquí tienes algunos ejemplos de gráficos hechos con ggplot2.</p>
+<section id="visualización-de-variables-numéricas" class="level3">
+<h3 class="anchored" data-anchor-id="visualización-de-variables-numéricas">Visualización de variables numéricas:</h3>
+<p>Las variables numéricas se pueden visualizar utilizando varios tipos de gráficos. Algunos ejemplos son:</p>
+<ul>
+<li><strong>Histograma:</strong> Es una representación gráfica de una variable en forma de barras, donde la superficie de cada barra es proporcional a la frecuencia de los valores representados.</li>
+<li><strong>Diagrama de dispersión:</strong> Este tipo de gráfico muestra la relación entre dos variables numéricas. Cada punto en el gráfico representa una observación en el conjunto de datos.</li>
+<li><strong>Diagrama de caja (Boxplot):</strong> Este gráfico es útil para visualizar la mediana, los cuartiles y los valores atípicos de una variable numérica.</li>
+</ul>
+<p>Aquí tienes un ejemplo genérico del código para crear estos gráficos con ggplot2:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a> <span class="co"># Cargar el paquete </span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un histograma</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> migracion, </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Edad)) <span class="sc">+</span> </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un diagrama de dispersión</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> migracion, </span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Edad, <span class="at">y =</span> Años_en_el_pais)) <span class="sc">+</span> </span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un diagrama de caja</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> migracion, </span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Pais_de_origen, <span class="at">y =</span> Edad)) <span class="sc">+</span> </span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="visualización-de-variables-categóricas" class="level3">
+<h3 class="anchored" data-anchor-id="visualización-de-variables-categóricas">Visualización de variables categóricas:</h3>
+<p>Las variables categóricas también se pueden representar utilizando varios tipos de gráficos. Algunos ejemplos son:</p>
+<ul>
+<li><strong>Diagrama de barras:</strong> Este tipo de gráfico se utiliza para representar variables discretas. En un diagrama de barras se representa en el eje X cada valor de la variable de estudio, y para cada uno se dibuja una barra rectangular con una altura proporcional a su frecuencia.</li>
+<li><strong>Diagrama circular (Gráfico de pastel):</strong> Este tipo de gráfico muestra el tamaño relativo de las categorías dentro de una variable categórica como sectores en un círculo.</li>
+<li><strong>Diagrama radial (Gráfico radial o Diagrama de araña):</strong> Este tipo de gráfico estadístico representa diversas variables. En estadística, el gráfico radial sirve para comparar los valores de diferentes variables.</li>
+</ul>
+<p>Aquí tienes un ejemplo genérico del código para crear estos gráficos con ggplot2:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar el paquete </span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un diagrama de barras</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> migracion, </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Pais_de_origen)) <span class="sc">+</span> </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un diagrama circular</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>migracion <span class="sc">%&gt;%</span> </span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Pais_de_origen) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> n, <span class="at">fill =</span> Pais_de_origen)) <span class="sc">+</span> </span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">width =</span> <span class="dv">1</span>, <span class="at">stat =</span><span class="st">"identity"</span>) <span class="sc">+</span> </span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="st">"y"</span>, <span class="at">start=</span><span class="dv">0</span>)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un diagrama radial</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> migracion, </span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Pais_de_origen, <span class="at">y =</span> Edad)) <span class="sc">+</span> </span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>() <span class="sc">+</span> </span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="tema-7" class="level1">
+<h1>Tema 7</h1>
+<p>Una prueba de hipótesis es un método estadístico que se utiliza para tomar una decisión sobre una hipótesis utilizando los datos de una muestra. En otras palabras, una prueba de hipótesis es un procedimiento que nos permite evaluar si los resultados de un estudio son estadísticamente significativos.</p>
+<p>En el contexto de la migración, podríamos estar interesados en probar hipótesis como:</p>
+<ul>
+<li>“La tasa media de migración en el país A es igual a la tasa media de migración en el país B”.</li>
+<li>“La tasa media de migración en el país A es mayor que la tasa media de migración en el país B”.</li>
+<li>“La tasa media de migración en el país A es menor que la tasa media de migración en el país B”.</li>
+</ul>
+<p>Para realizar estas pruebas, necesitamos definir dos hipótesis:</p>
+<ul>
+<li>Hipótesis nula (H0): Es la afirmación que se quiere poner a prueba. Por ejemplo, “La tasa media de migración en el país A es igual a la tasa media de migración en el país B”.</li>
+<li>Hipótesis alternativa (H1): Es la afirmación que se acepta si los datos proporcionan suficiente evidencia contra la hipótesis nula. Por ejemplo, “La tasa media de migración en el país A no es igual a la tasa media de migración en el país B”.</li>
+</ul>
+<p>Una vez definidas las hipótesis, se realiza la prueba y se obtiene un valor p.&nbsp;Si este valor p es menor que un nivel de significancia predefinido (generalmente 0.05), entonces rechazamos la hipótesis nula y aceptamos la hipótesis alternativa.</p>
+<p>En cuanto al tamaño de la muestra, generalmente se considera que una muestra es grande si su tamaño es mayor o igual a 30. Cuando el tamaño de la muestra es grande (n ≥ 30), podemos utilizar el teorema del límite central para asumir que la distribución muestral de la media sigue aproximadamente una distribución normal. Esto nos permite utilizar pruebas paramétricas como la prueba t para comparar las medias.</p>
+<p>Por otro lado, cuando el tamaño de la muestra es pequeño (n &lt; 30), no podemos hacer esta suposición. En este caso, si los datos no siguen una distribución normal, podríamos necesitar utilizar pruebas no paramétricas. Las fórmulas para las pruebas t son las siguientes:</p>
+<ul>
+<li>Para muestras independientes:</li>
+</ul>
+<p><span class="math display">\[t = \frac{(\bar{X}_1 - \bar{X}_2) - D_0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}\]</span></p>
+<ul>
+<li>Para muestras relacionadas:</li>
+</ul>
+<p><span class="math display">\[t = \frac{\bar{D} - D_0}{s_D / \sqrt{n}}\]</span></p>
+<p>Donde:</p>
+<ul>
+<li><span class="math inline">\(bar{X}_1\)</span> y <span class="math inline">\(bar{X}_2\)</span> son las medias muestrales</li>
+<li><span class="math inline">\(D_0\)</span> es la diferencia en las medias bajo la hipótesis nula</li>
+<li><span class="math inline">\(s_1^2\)</span> y <span class="math inline">\(s_2^2\)</span> son las varianzas muestrales</li>
+<li><span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> son los tamaños de las muestras</li>
+<li><span class="math inline">\(bar{D}\)</span> es la media de las diferencias para muestras relacionadas</li>
+<li><span class="math inline">\(s_D\)</span> es la desviación estándar de las diferencias para muestras relacionadas</li>
+<li><span class="math inline">\(n\)</span> es el tamaño de la muestra para muestras relacionadas.</li>
+</ul>
+</section>
+<section id="tema-8" class="level1">
+<h1>Tema 8</h1>
+<section id="el-modelo-de-mínimos-cuadrados-ordinarios-con-una-sola-variable" class="level2">
+<h2 class="anchored" data-anchor-id="el-modelo-de-mínimos-cuadrados-ordinarios-con-una-sola-variable">El modelo de mínimos cuadrados ordinarios con una sola variable:</h2>
+<p>Este es un método estadístico que se utiliza para estimar la relación entre dos variables. En este modelo, se asume que la relación entre las dos variables es lineal, es decir, se puede representar mediante una línea recta. La ecuación de esta línea recta se suele expresar de la siguiente manera:</p>
+<p><span class="math display">\[Y = a + bX + \epsilon\]</span></p>
+<p>Donde:</p>
+<ul>
+<li><span class="math inline">\(Y\)</span> es la variable dependiente (la variable que queremos predecir).</li>
+<li><span class="math inline">\(X\)</span> es la variable independiente (la variable que utilizamos para hacer la predicción).</li>
+<li><span class="math inline">\(a\)</span> es la ordenada en el origen (el valor de <span class="math inline">\(Y\)</span> cuando <span class="math inline">\(X = 0\)</span>).</li>
+<li><span class="math inline">\(b\)</span> es la pendiente de la línea (el cambio en <span class="math inline">\(Y\)</span> por cada unidad de cambio en <span class="math inline">\(X\)</span>).</li>
+<li><span class="math inline">\(\epsilon\)</span> es el error o residuo (la diferencia entre el valor observado de <span class="math inline">\(Y\)</span> y el valor predicho por el modelo).</li>
+</ul>
+<p>El objetivo del método de mínimos cuadrados ordinarios es encontrar los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> que minimizan la suma de los cuadrados de los errores.</p>
+</section>
+<section id="interpretación-y-validación-de-los-parámetros-de-una-regresión" class="level2">
+<h2 class="anchored" data-anchor-id="interpretación-y-validación-de-los-parámetros-de-una-regresión">Interpretación y validación de los parámetros de una regresión:</h2>
+<p>Los parámetros de una regresión (<span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> en el caso del modelo de mínimos cuadrados ordinarios) nos dan información sobre la relación entre las variables. La pendiente (<span class="math inline">\(b\)</span>) nos indica cómo cambia la variable dependiente (<span class="math inline">\(Y\)</span>) cuando cambia la variable independiente (<span class="math inline">\(X\)</span>). Si <span class="math inline">\(b &gt; 0\)</span>, entonces un aumento en <span class="math inline">\(X\)</span> se asocia con un aumento en <span class="math inline">\(Y\)</span>. Si <span class="math inline">\(b &lt; 0\)</span>, entonces un aumento en <span class="math inline">\(X\)</span> se asocia con una disminución en <span class="math inline">\(Y\)</span>. Si <span class="math inline">\(b = 0\)</span>, entonces no hay relación entre las variables.</p>
+<p>Para validar los parámetros de una regresión, generalmente realizamos una prueba de hipótesis para determinar si los parámetros son significativamente diferentes de cero. Si el valor p asociado con un parámetro es menor que un nivel de significancia predefinido (generalmente 0.05), entonces concluimos que el parámetro es significativamente diferente de cero.</p>
+</section>
+<section id="la-relación-entre-un-modelo-de-regresión-y-la-correlación-de-los-datos" class="level2">
+<h2 class="anchored" data-anchor-id="la-relación-entre-un-modelo-de-regresión-y-la-correlación-de-los-datos">La relación entre un modelo de regresión y la correlación de los datos:</h2>
+<p>La correlación y la regresión están estrechamente relacionadas. Ambas técnicas se utilizan para explorar la relación entre dos variables. La correlación mide la fuerza y dirección de la relación lineal entre dos variables, mientras que la regresión proporciona una forma de predecir una variable a partir de otra. El coeficiente de correlación puede ser cuadrado para obtener el coeficiente de determinación (<span class="math inline">\(R^2\)</span>), que indica qué porcentaje de la variabilidad en una variable puede ser explicado por la otra variable.</p>
+<p>En el contexto de la migración, podríamos estar interesados en explorar varias relaciones. Por ejemplo, podríamos querer ver si hay una relación entre el número de migrantes en un país y el PIB per cápita del país. En este caso, podríamos ajustar un modelo de regresión con el número de migrantes como variable dependiente y el PIB per cápita como variable independiente.</p>
+<p>Para más detalles sobre estos temas, te recomiendo “Modern Statistics” por Mine Cetinkaya. Este libro ofrece un enfoque moderno a los conceptos estadísticos y pone un gran énfasis en el análisis exploratorio de datos y en métodos basados en simulación para inferencia estadística.</p>
+</section>
+</section>
+<section id="tema-9" class="level1">
+<h1>Tema 9:</h1>
+<section id="el-modelo-de-mínimos-cuadrados-ordinarios-con-una-sola-variable-1" class="level2">
+<h2 class="anchored" data-anchor-id="el-modelo-de-mínimos-cuadrados-ordinarios-con-una-sola-variable-1">El modelo de mínimos cuadrados ordinarios con una sola variable:</h2>
+<p>Aquí tienes un ejemplo genérico del código para ajustar este modelo en R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajustar el modelo</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> datos)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver los resultados</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Por favor reemplaza “Y” y “X” con los nombres de las columnas que deseas comparar y “datos” con el nombre del dataframe que contiene tus datos.</p>
+</section>
+<section id="interpretación-y-validación-de-los-parámetros-de-una-regresión-1" class="level2">
+<h2 class="anchored" data-anchor-id="interpretación-y-validación-de-los-parámetros-de-una-regresión-1">Interpretación y validación de los parámetros de una regresión:</h2>
+<p>Los parámetros de una regresión (<span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> en el caso del modelo de mínimos cuadrados ordinarios) nos dan información sobre la relación entre las variables. La pendiente (<span class="math inline">\(b\)</span>) nos indica cómo cambia la variable dependiente (<span class="math inline">\(Y\)</span>) cuando cambia la variable independiente (<span class="math inline">\(X\)</span>). Si <span class="math inline">\(b &gt; 0\)</span>, entonces un aumento en <span class="math inline">\(X\)</span> se asocia con un aumento en <span class="math inline">\(Y\)</span>. Si <span class="math inline">\(b &lt; 0\)</span>, entonces un aumento en <span class="math inline">\(X\)</span> se asocia con una disminución en <span class="math inline">\(Y\)</span>. Si <span class="math inline">\(b = 0\)</span>, entonces no hay relación entre las variables.</p>
+<p>Para validar los parámetros de una regresión, generalmente realizamos una prueba de hipótesis para determinar si los parámetros son significativamente diferentes de cero. Si el valor p asociado con un parámetro es menor que un nivel de significancia predefinido (generalmente 0.05), entonces concluimos que el parámetro es significativamente diferente de cero.</p>
+</section>
+<section id="otros-sabores-del-modelo-de-regresión" class="level2">
+<h2 class="anchored" data-anchor-id="otros-sabores-del-modelo-de-regresión">Otros sabores del modelo de regresión</h2>
+<p>Existen varios tipos de modelos de regresión que pueden ser más apropiados dependiendo de la naturaleza de los datos y la relación entre las variables.</p>
+<p>Por ejemplo, los modelos <strong>log-log</strong> son útiles cuando tanto la variable dependiente como las independientes son logarítmicas. Otro ejemplo son los modelos logit y probit, que son utilizados cuando la variable dependiente es binaria.</p>
+<p>Finalmente, en el contexto de la migración y sus determinantes, los modelos de regresión pueden ser utilizados para explorar una variedad de cuestiones. Por ejemplo, podríamos estar interesados en explorar varias relaciones. Por ejemplo, podríamos querer ver si hay una relación entre el número de migrantes en un país y el PIB per cápita del país. En este caso, podríamos ajustar un modelo log-log con el logaritmo del número de migrantes como variable dependiente y el logaritmo del PIB per cápita como variable independiente.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajustar el modelo log-log</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(Y) <span class="sc">~</span> <span class="fu">log</span>(X), <span class="at">data =</span> datos)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver los resultados</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="tema-10" class="level1">
+<h1>Tema 10</h1>
+<section id="modelo-de-regresión-con-más-de-una-variable" class="level2">
+<h2 class="anchored" data-anchor-id="modelo-de-regresión-con-más-de-una-variable">Modelo de regresión con más de una variable:</h2>
+<p>Este modelo, también conocido como modelo de regresión múltiple, se utiliza cuando se quiere predecir una variable dependiente a partir de más de una variable independiente. La ecuación general para un modelo de regresión múltiple es la siguiente:</p>
+<p><span class="math display">\[Y = β_0 + β_1X_1 + β_2X_2 + ... + β_kX_k + \epsilon\]</span></p>
+<p>Donde:</p>
+<ul>
+<li><span class="math inline">\(Y\)</span> es la variable dependiente (la variable que queremos predecir).</li>
+<li><span class="math inline">\(X_1, X_2, ..., X_k\)</span> son las variables independientes (las variables que utilizamos para hacer la predicción).</li>
+<li><span class="math inline">\(β_0, β_1, ..., β_k\)</span> son los coeficientes de regresión, que indican el cambio esperado en <span class="math inline">\(Y\)</span> por cada unidad de cambio en las correspondientes variables independientes.</li>
+<li><span class="math inline">\(\epsilon\)</span> es el error o residuo (la diferencia entre el valor observado de <span class="math inline">\(Y\)</span> y el valor predicho por el modelo).</li>
+</ul>
+<p>Aquí tienes un ejemplo genérico del código para ajustar este modelo en R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajustar el modelo</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xk, <span class="at">data =</span> datos)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver los resultados</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Por favor reemplaza “Y”, “X1”, “X2”, …, “Xk” con los nombres de las columnas que deseas comparar y “datos” con el nombre del dataframe que contiene tus datos.</p>
+<ul>
+<li><p><strong>Variables dummy:</strong> Una variable dummy (también conocida como variable indicadora o binaria) es una variable que toma el valor 1 o 0 para indicar la presencia o ausencia de una cierta característica o condición. Se utilizan comúnmente en análisis estadísticos y modelos de regresión para incluir información categórica en un modelo matemático. Algunos ejemplos comunes de variables dummy son los siguientes:</p></li>
+<li><p>Ayuda gubernamental (que tome el valor 1 para los migrantes que reciban ayuda del gobierno local y 0 en caso contrario)</p></li>
+<li><p>Condición de refugiado (que otorgue el valor 1 para los casos de personas refugiadas y 0 para el caso contrario)</p></li>
+</ul>
+<p>En R, no es necesario crear manualmente las variables dummy. Si incluyes un término de regresión en la fórmula y este en los datos es de la clase factor, R lo hace automáticamente. Aquí tienes un ejemplo genérico del código para ajustar un modelo con variables dummy en R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir la variable categórica a factor</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">refugiado =</span> <span class="fu">as.factor</span>(refugiado))</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajustar el modelo</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xk <span class="sc">+</span> refugiado, <span class="at">data =</span> datos)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver los resultados</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Los coeficientes de regresión representan el cambio promedio en la variable dependiente por cada unidad de cambio en la variable predictora correspondiente, manteniendo constantes las demás predictoras presentes en el modelo. Para validar estos coeficientes, generalmente realizamos una prueba de hipótesis para determinar si son significativamente diferentes de cero. Si el valor p asociado con un coeficiente es menor que un nivel de significancia predefinido (generalmente 0.05), entonces concluimos que el coeficiente es significativamente diferente de cero.</p>
+</section>
+</section>
+<section id="tema-12" class="level1">
+<h1>Tema 12:</h1>
+<p>En esta clase, utilizaremos el libro “Forecast Principles and Practice” de Rob Hyndman como referencia. Trabajaremos con las bibliotecas <code>tsibble, urca, fable y tidyverse</code> en R.</p>
+<section id="manejo-de-formatos-de-fecha-en-r" class="level2">
+<h2 class="anchored" data-anchor-id="manejo-de-formatos-de-fecha-en-r">Manejo de formatos de fecha en R:</h2>
+<p>Las fechas en R pueden manejarse usando la función as.Date(). El formato estándar es “yyyy-mm-dd”. Por ejemplo, para convertir una cadena de caracteres a una fecha, puedes usar</p>
+</section>
+<section id="introducción-a-la-biblioteca-tsibble-para-el-manejo-de-series-de-tiempo" class="level2">
+<h2 class="anchored" data-anchor-id="introducción-a-la-biblioteca-tsibble-para-el-manejo-de-series-de-tiempo">Introducción a la biblioteca tsibble para el manejo de series de tiempo:</h2>
+<p>Un tsibble (tibble de series de tiempo) es una estructura de datos para manejar y analizar datos de series de tiempo en R. Extiende el marco de datos tibble con un índice ordenado y una clave opcional.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo de creación de un tsibble </span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tsibble) </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tsibble</span>(<span class="at">index =</span> Año, </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">key =</span> <span class="fu">c</span>(País, PIB, Población),</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">data =</span> migracion)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="partes-de-un-tsibble---clave-e-índice" class="level2">
+<h2 class="anchored" data-anchor-id="partes-de-un-tsibble---clave-e-índice">Partes de un <code>tsibble - clave e índice:</code></h2>
+<p>La <strong>clave o key</strong> en un tsibble es una o más variables que identifican de manera única cada observación a lo largo del tiempo. El <strong>índice o index</strong> es una variable que proporciona una marca de tiempo única para cada observación.</p>
+</section>
+<section id="operaciones-agregadas-en-el-tiempo-y-por-grupo" class="level2">
+<h2 class="anchored" data-anchor-id="operaciones-agregadas-en-el-tiempo-y-por-grupo">Operaciones agregadas en el tiempo y por grupo:</h2>
+<p>Con tsibble, puedes realizar operaciones agregadas en el tiempo y por grupo usando funciones como <code>index_by()</code> y <code>group_by_key()</code>.</p>
+</section>
+</section>
+<section id="tema-13" class="level1">
+<h1>Tema 13:</h1>
+<p>Aplicaremos conceptos estadísticos para analizar los datos de migración como una serie temporal.</p>
+<ul>
+<li>Distribución de una variable a lo largo del tiempo: Visualizaremos cómo cambia una variable (por ejemplo, el número de migrantes) a lo largo del tiempo.</li>
+<li>Identificación de patrones temporales en los datos de migración: Utilizaremos técnicas como la autocorrelación y el análisis espectral para identificar patrones en los datos de migración.</li>
+</ul>
+</section>
+<section id="tema-14" class="level1">
+<h1>Tema 14</h1>
+<p>La descomposición de una serie temporal es un procedimiento que permite dividir una serie temporal en tres componentes principales:</p>
+<ul>
+<li><strong>Tendencia-ciclo:</strong> Esta componente refleja la progresión a largo plazo de la serie o los patrones cíclicos regulares. Los patrones cíclicos son fluctuaciones que no son de naturaleza estacional, por ejemplo, los ciclos relacionados con el estado de la economía.</li>
+<li><strong>Estacionalidad:</strong> Esta componente muestra la variabilidad estacional en los datos, es decir, las variaciones que se repiten cada temporada.</li>
+<li><strong>Residuo:</strong> Esta componente incluye todo lo que no se captura por la tendencia-ciclo o la estacionalidad.</li>
+</ul>
+<p>En R, puedes usar la función <code>decompose()</code> para descomponer una serie temporal. Sin embargo, en el paquete <code>fable</code>, puedes usar el modelo TSL (Trend, Seasonal, and Level) para descomponer una serie temporal. Aquí te muestro un ejemplo de cómo podrías hacerlo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fable) </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tsibble)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Asumamos que 'migrantes' es un dataframe que contiene los datos de migración</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># y que 'fecha' es la columna de fechas y 'numero' es la columna del número de migrantes</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Convierte el dataframe a un formato de tsibble</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>datos_ts <span class="ot">&lt;-</span> migrantes <span class="sc">%&gt;%</span> <span class="fu">as_tsibble</span>(<span class="at">index =</span> fecha)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajusta el modelo TSL</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> datos_ts <span class="sc">%&gt;%</span> <span class="fu">model</span>(<span class="fu">TSL</span>(numero <span class="sc">~</span> <span class="fu">trend</span>() <span class="sc">+</span> <span class="fu">season</span>()))</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Realiza la descomposición</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>descomposicion <span class="ot">&lt;-</span> modelo <span class="sc">%&gt;%</span> <span class="fu">components</span>()</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Muestra la descomposición</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(descomposicion)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Este código te dará una descomposición de tu serie temporal y producirá un gráfico de los componentes. Por favor, ten en cuenta que este es un ejemplo genérico y puede que necesites ajustarlo para que se adapte a tus datos específicos. Además, ten en cuenta que mi conocimiento interno y la información sólo están actualizados hasta algún punto en el año 2021 y podrían ser inexactos o estar desactualizados. Te recomendaría que consultes documentación más reciente o busques ayuda adicional si encuentras algún problema con este código.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
