@@ -12,7 +12,7 @@ css: guia_estudiantes.css
 
 ### Operadores:
 
-Los operadores son los símbolos que indican una operación específica. En R, hay varios tipos de operadores como aritméticos (+, -, *, /, %%, ^), de asignación (<-, ->, =), de comparación (==, !=, <, <=, >, >=), lógicos (&, |, !), y otros.
+Los operadores son los símbolos que indican una operación específica. En R, hay varios tipos de operadores como aritméticos (+, -, \*, /, %%, \^), de asignación (\<-, -\>, =), de comparación (==, !=, \<, \<=, \>, \>=), lógicos (&, \|, !), y otros.
 
 ### Tipos de datos:
 
@@ -32,26 +32,33 @@ Es donde R almacena objetos (como vectores, matrices, listas, data frames) y res
 
 ## Instalación de paquetes en R
 
-Para instalar un paquete en R desde CRAN (Comprehensive R Archive Network), puedes usar la función `install.packages()`. Por ejemplo, para instalar el paquete ggplot2, usarías el siguiente comando:
+Para instalar un paquete en R desde CRAN (Comprehensive R Archive Network), puedes usar la función `install.packages()`. Te recomendamos que antes de instalar librerías vayas a **Tools \> Global Options \> Packages** y remuevas el visto en **Use secure method for HTTP** como podrás ver en la imagen.
+
+![](captura_1.png){fig-align="center"}
+
+Por ejemplo, para instalar el paquete `tidyverse`, usarías el siguiente comando en el panel de Consola:
 
 ```{r, eval = FALSE}
-install.packages("ggplot2") 
+install.packages("tidyverse") 
 ```
 
 Después de la instalación, necesitas cargar el paquete si quieres acceder a sus funciones. Esto se hace con la función `library()`:
 
-```{r, eval = FALSE}
-library(ggplot2) 
+```{r, eval = TRUE}
+library(tidyverse) 
 ```
+
+En tu consola de R podrás ver un mensaje que indica las librerías que componen el `tidyverse` se han añadido a tu entorno de trabajo. Con estas librería podrás: leer archivos y convertirlos en tibbles o data frames, realizar operaciones de limpieza, imputación y calculo de nuevas variables, visualizar tus datos con una sintaxis sencilla, entre otras operaciones que te invitamos a explorar en:
+
+<https://www.tidyverse.org/>
 
 ## Libros recomendados
 
 Aquí te dejo algunos libros que podrían ser útiles para aprender más sobre programación con R y tidyverse, así como estadística moderna:
 
--   "R for Data Science" por Hadley Wickham & Garrett Grolemund.
--   "Advanced R" por Hadley Wickham.
--   "The Elements of Statistical Learning: Data Mining, Inference, and Prediction" por Trevor Hastie, Robert Tibshirani & Jerome Friedman.
--   "Modern Applied Statistics with S" por W.N. Venables & B.D. Ripley.
+-   [Introduction to Modern Statistics](https://www.openintro.org/book/ims/) por Johanna Hardin, Mine Çetinkaya-Rundel
+-   [R for Data Science](https://r4ds.had.co.nz/) por Hadley Wickham & Garrett Grolemund.
+-   [Advanced R](https://adv-r.hadley.nz/) por Hadley Wickham.
 
 ## Crear un proyecto en RStudio
 
@@ -94,9 +101,9 @@ datos <- read_tsv("ruta/del/archivo.tsv")
 
 ## Introducción del concepto de operaciones concatenadas con la pipe
 
-El operador pipe %>% es útil para concatenar múltiples operaciones con dplyr. Permite escribir una secuencia de operaciones de izquierda a derecha. Por ejemplo:
+El operador pipe %\>% es útil para concatenar múltiples operaciones con dplyr. Permite escribir una secuencia de operaciones de izquierda a derecha. Por ejemplo:
 
-```{r, eval = FALSE} 
+```{r, eval = FALSE}
 # Sin usar pipe 
 
 resultado <- funcion3(funcion2(funcion1(datos)))
@@ -110,7 +117,7 @@ resultado <- datos %>% funcion1() %>% funcion2() %>% funcion3()
 
 Aquí tienes otro ejemplo que muestra cómo se pueden encadenar varias funciones con la pipe para realizar un análisis de datos:
 
-```{r, eval = FALSE} 
+```{r, eval = FALSE}
 # Usando pipe para encadenar varias funciones en R
 
 datos %>% 
@@ -121,23 +128,21 @@ datos %>%
 
 En este ejemplo, primero se filtran las filas de datos donde variable1 es mayor que 50. Luego, se seleccionan variable2 y variable3. Finalmente, se calcula la media de variable3. Todo esto se hace en una sola línea gracias al operador pipe `%>%`.
 
-
 # Tema 3
 
 En las dos primeras clases, aprendiste sobre R, tidyverse y cómo importar y manejar datos. Ahora, vamos a aplicar esos conocimientos para entender la importancia del análisis de datos migratorios.
 
-Conceptos claves sobre la migración: 
+Conceptos claves sobre la migración:
 
-- *Corrientes o flujos migratorios:* Se refiere a la cantidad de personas migrantes que se mueven hacia otro lugar (o desde otro) para establecerse. 
-- *Desplazados:* Personas que han abandonado su lugar de origen por temor ante peligros diferentes a los que amparan el estatuto de personas refugiadas. 
-- *Emigración:* Consiste en salir de un país para asentarse en otro de forma temporal o definitiva. - *Extranjero:* Una persona extranjera es aquella que no tiene la nacionalidad de un tercer país. 
-- *Inmigrante:* Todas aquellas personas de otro país que ingresan en un tercero para establecerse en él. 
-- *Migración:* Movimientos poblacionales hacia otros Estados o bien a otras partes de un mismo país. 
-- *Migrante:* Personas que van a otro país o región con el objetivo de mejorar su vida, así como la de sus familias. Puede haber diferentes tipos de migrantes, dependiendo de las razones que le hayan empujado a migrar.
-- *País de origen, de tránsito o de destino:* El país de origen es donde sale la persona migrante. Los países de tránsito son aquellos por los que pasa la persona migrante en su trayecto hacia el país de destino, el fin de su trayecto. 
-- *Persona refugiada:* Personas que "con fundados temores de ser perseguida por motivos de raza, religión, nacionalidad, pertenencia a determinado grupo social u opiniones políticas, se encuentre fuera del país de su nacionalidad y no pueda o, a causa de dichos temores, no quiera acogerse a la protección de tal país". 
-- *Protección:* Mecanismos (internacional o temporal) para proteger la integridad de las personas.
-
+-   *Corrientes o flujos migratorios:* Se refiere a la cantidad de personas migrantes que se mueven hacia otro lugar (o desde otro) para establecerse.
+-   *Desplazados:* Personas que han abandonado su lugar de origen por temor ante peligros diferentes a los que amparan el estatuto de personas refugiadas.
+-   *Emigración:* Consiste en salir de un país para asentarse en otro de forma temporal o definitiva. - *Extranjero:* Una persona extranjera es aquella que no tiene la nacionalidad de un tercer país.
+-   *Inmigrante:* Todas aquellas personas de otro país que ingresan en un tercero para establecerse en él.
+-   *Migración:* Movimientos poblacionales hacia otros Estados o bien a otras partes de un mismo país.
+-   *Migrante:* Personas que van a otro país o región con el objetivo de mejorar su vida, así como la de sus familias. Puede haber diferentes tipos de migrantes, dependiendo de las razones que le hayan empujado a migrar.
+-   *País de origen, de tránsito o de destino:* El país de origen es donde sale la persona migrante. Los países de tránsito son aquellos por los que pasa la persona migrante en su trayecto hacia el país de destino, el fin de su trayecto.
+-   *Persona refugiada:* Personas que "con fundados temores de ser perseguida por motivos de raza, religión, nacionalidad, pertenencia a determinado grupo social u opiniones políticas, se encuentre fuera del país de su nacionalidad y no pueda o, a causa de dichos temores, no quiera acogerse a la protección de tal país".
+-   *Protección:* Mecanismos (internacional o temporal) para proteger la integridad de las personas.
 
 Iniciativas para abordar el tema de la migración
 
@@ -153,10 +158,10 @@ Iniciativas para abordar el tema de la migración
 
 Una variable aleatoria es una función que asigna un valor numérico a cada resultado en el espacio muestral de un experimento aleatorio. Los momentos de una variable aleatoria son los valores esperados de ciertas funciones de la variable aleatoria. Aquí te presento cuatro ejemplos de variables aleatorias y sus momentos en el contexto de la migración:
 
-- **Variable aleatoria "Edad al emigrar":** Esta variable puede tomar valores como la edad exacta en años que tenía una persona cuando emigró. Un momento relevante podría ser la media o valor esperado, que indicaría la edad promedio al emigrar.
-- **Variable aleatoria "Número de migrantes por familia":** Esta variable puede tomar valores como el número total de miembros de una familia que han emigrado. Un momento relevante podría ser la varianza, que indicaría cuánto varía el número de migrantes por familia.
-- **Variable aleatoria "Duración de la migración":** Esta variable puede tomar valores como el número total de días que duró el proceso de migración. Un momento relevante podría ser la mediana, que indicaría la duración típica de la migración.
-- **Variable aleatoria "País destino":** Esta es una variable categórica que puede tomar valores como los nombres de los países a los que las personas emigran. Un momento relevante podría ser la moda, que indicaría el país destino más común.
+-   **Variable aleatoria "Edad al emigrar":** Esta variable puede tomar valores como la edad exacta en años que tenía una persona cuando emigró. Un momento relevante podría ser la media o valor esperado, que indicaría la edad promedio al emigrar.
+-   **Variable aleatoria "Número de migrantes por familia":** Esta variable puede tomar valores como el número total de miembros de una familia que han emigrado. Un momento relevante podría ser la varianza, que indicaría cuánto varía el número de migrantes por familia.
+-   **Variable aleatoria "Duración de la migración":** Esta variable puede tomar valores como el número total de días que duró el proceso de migración. Un momento relevante podría ser la mediana, que indicaría la duración típica de la migración.
+-   **Variable aleatoria "País destino":** Esta es una variable categórica que puede tomar valores como los nombres de los países a los que las personas emigran. Un momento relevante podría ser la moda, que indicaría el país destino más común.
 
 ## Variables numéricas y categóricas en el contexto de la migración
 
@@ -164,22 +169,23 @@ Las variables numéricas son aquellas que pueden tomar cualquier valor dentro de
 
 ### Variables numéricas:
 
-- "Edad al emigrar" 
-- "Número de migrantes por familia" 
-- "Duración de la migración" 
-- "Distancia recorrida durante la migración"
+-   "Edad al emigrar"
+-   "Número de migrantes por familia"
+-   "Duración de la migración"
+-   "Distancia recorrida durante la migración"
 
-### Variables categóricas: 
-- "País destino" 
-- "Motivo de la migración" (por ejemplo, trabajo, educación, conflicto) 
-- "Estado legal en el país destino" (por ejemplo, ciudadano, residente permanente, visa temporal) 
-- "Nivel educativo alcanzado antes de emigrar" (por ejemplo, sin educación formal, educación primaria, educación secundaria, educación universitaria)
+### Variables categóricas:
+
+-   "País destino"
+-   "Motivo de la migración" (por ejemplo, trabajo, educación, conflicto)
+-   "Estado legal en el país destino" (por ejemplo, ciudadano, residente permanente, visa temporal)
+-   "Nivel educativo alcanzado antes de emigrar" (por ejemplo, sin educación formal, educación primaria, educación secundaria, educación universitaria)
 
 ## Operaciones entre variables usando mutate
 
 La función mutate en R se utiliza para crear nuevas variables que son funciones de las variables existentes. Aquí te presento cuatro ejemplos del uso de mutate en el contexto de la migración:
 
-```{r, eval = FALSE} 
+```{r, eval = FALSE}
 
 # Asegúrate de tener tidyverse cargado 
 # NOTA: Estos ejemplos son ilustrativos 
@@ -193,7 +199,7 @@ df <- df %>% mutate( `Edad actual` = as.numeric(format(Sys.Date(), "%Y")) - `Añ
                      `Tasa de migrantes por familia` = `Número total de migrantes en la familia` / `Tamaño total de la familia`, 
                      `Distancia recorrida por día` = `Distancia total recorrida durante la migración` / `Duración total de la migración` )
 
-``` 
+```
 
 Para visualizar estos datos, podemos usar ggplot2, un sistema para crear gráficos por capas en R.
 
@@ -207,7 +213,7 @@ Los valores vacíos y atípicos pueden ser un gran problema en el análisis de d
 
 La recodificación de variables es un proceso común en el análisis de datos, especialmente cuando se trabaja con datos categóricos. Por ejemplo, podríamos tener una variable categórica "País de origen" con demasiadas categorías (países). Podríamos recodificarla en una nueva variable que agrupe los países por regiones. Esto podría simplificar el análisis y hacer que los resultados sean más interpretables. Aquí tienes un ejemplo genérico de cómo hacerlo en R:
 
-```{r, eval = FALSE} 
+```{r, eval = FALSE}
 # Cargar el paquete 
 
 library(tidyverse)
@@ -226,7 +232,7 @@ datos <- datos %>% mutate(Region = case_when(
 
 La limpieza de datos es un paso crucial en cualquier análisis de datos. Con mutate y tidyr, podemos realizar una serie de transformaciones para limpiar nuestros datos. Por ejemplo, podríamos tener datos sobre la "Fecha de migración" en un formato que no sea ideal para nuestro análisis. Podríamos usar mutate para transformar esta variable en una nueva variable que represente el "Año de migración". Aquí tienes un ejemplo genérico de cómo hacerlo en R:
 
-```{r, eval = FALSE} 
+```{r, eval = FALSE}
 
 # Cargar el paquete 
 
@@ -250,27 +256,25 @@ Las variables categóricas pueden ser ordinales o no ordinales. Las variables or
 
 El formato ancho de una tabla es aquel en el que cada sujeto tiene una fila y cada medida tiene una columna. El formato largo es aquel en el que cada sujeto tiene varias filas, una para cada medida. Por ejemplo, si tenemos datos sobre la migración desde varios países a lo largo de varios años, el formato ancho tendría una fila para cada país y una columna para cada año. El formato largo tendría una fila para cada combinación país-año.
 
-
-
 # Tema 5
 
 ## La gramática de los gráficos ggplot2:
 
 `ggplot2` es un paquete de visualización de datos para R que ayuda a los usuarios a crear gráficos de datos, incluyendo aquellos que son multicapa, con facilidad. Fue creado por Hadley Wickham en 2005. ggplot2 es una implementación de la gramática de gráficos de Leland Wilkinson, un esquema general para la visualización de datos que divide los gráficos en componentes semánticos como escalas y capas. La gramática de gráficos es análoga a la forma en que aprender gramática puede ayudar a un estudiante a construir cientos de oraciones diferentes al aprender solo una pequeña cantidad de verbos, sustantivos y adjetivos.
 
-Aquí tienes algunos ejemplos de gráficos hechos con ggplot2. 
+Aquí tienes algunos ejemplos de gráficos hechos con ggplot2.
 
-### Visualización de variables numéricas: 
+### Visualización de variables numéricas:
 
-Las variables numéricas se pueden visualizar utilizando varios tipos de gráficos. Algunos ejemplos son: 
+Las variables numéricas se pueden visualizar utilizando varios tipos de gráficos. Algunos ejemplos son:
 
-- **Histograma:** Es una representación gráfica de una variable en forma de barras, donde la superficie de cada barra es proporcional a la frecuencia de los valores representados. 
-- **Diagrama de dispersión:** Este tipo de gráfico muestra la relación entre dos variables numéricas. Cada punto en el gráfico representa una observación en el conjunto de datos. 
-- **Diagrama de caja (Boxplot):** Este gráfico es útil para visualizar la mediana, los cuartiles y los valores atípicos de una variable numérica.
+-   **Histograma:** Es una representación gráfica de una variable en forma de barras, donde la superficie de cada barra es proporcional a la frecuencia de los valores representados.
+-   **Diagrama de dispersión:** Este tipo de gráfico muestra la relación entre dos variables numéricas. Cada punto en el gráfico representa una observación en el conjunto de datos.
+-   **Diagrama de caja (Boxplot):** Este gráfico es útil para visualizar la mediana, los cuartiles y los valores atípicos de una variable numérica.
 
 Aquí tienes un ejemplo genérico del código para crear estos gráficos con ggplot2:
 
-```{r, eval = FALSE} 
+```{r, eval = FALSE}
 
  # Cargar el paquete 
 
@@ -298,15 +302,15 @@ ggplot(data = migracion,
 
 ### Visualización de variables categóricas:
 
-Las variables categóricas también se pueden representar utilizando varios tipos de gráficos. Algunos ejemplos son: 
+Las variables categóricas también se pueden representar utilizando varios tipos de gráficos. Algunos ejemplos son:
 
-- **Diagrama de barras:** Este tipo de gráfico se utiliza para representar variables discretas. En un diagrama de barras se representa en el eje X cada valor de la variable de estudio, y para cada uno se dibuja una barra rectangular con una altura proporcional a su frecuencia. 
-- **Diagrama circular (Gráfico de pastel):** Este tipo de gráfico muestra el tamaño relativo de las categorías dentro de una variable categórica como sectores en un círculo. 
-- **Diagrama radial (Gráfico radial o Diagrama de araña):** Este tipo de gráfico estadístico representa diversas variables. En estadística, el gráfico radial sirve para comparar los valores de diferentes variables.
+-   **Diagrama de barras:** Este tipo de gráfico se utiliza para representar variables discretas. En un diagrama de barras se representa en el eje X cada valor de la variable de estudio, y para cada uno se dibuja una barra rectangular con una altura proporcional a su frecuencia.
+-   **Diagrama circular (Gráfico de pastel):** Este tipo de gráfico muestra el tamaño relativo de las categorías dentro de una variable categórica como sectores en un círculo.
+-   **Diagrama radial (Gráfico radial o Diagrama de araña):** Este tipo de gráfico estadístico representa diversas variables. En estadística, el gráfico radial sirve para comparar los valores de diferentes variables.
 
 Aquí tienes un ejemplo genérico del código para crear estos gráficos con ggplot2:
 
-```{r, eval = FALSE} 
+```{r, eval = FALSE}
 
 # Cargar el paquete 
 
@@ -354,25 +358,25 @@ Una vez definidas las hipótesis, se realiza la prueba y se obtiene un valor p. 
 
 En cuanto al tamaño de la muestra, generalmente se considera que una muestra es grande si su tamaño es mayor o igual a 30. Cuando el tamaño de la muestra es grande (n ≥ 30), podemos utilizar el teorema del límite central para asumir que la distribución muestral de la media sigue aproximadamente una distribución normal. Esto nos permite utilizar pruebas paramétricas como la prueba t para comparar las medias.
 
-Por otro lado, cuando el tamaño de la muestra es pequeño (n < 30), no podemos hacer esta suposición. En este caso, si los datos no siguen una distribución normal, podríamos necesitar utilizar pruebas no paramétricas. Las fórmulas para las pruebas t son las siguientes:
+Por otro lado, cuando el tamaño de la muestra es pequeño (n \< 30), no podemos hacer esta suposición. En este caso, si los datos no siguen una distribución normal, podríamos necesitar utilizar pruebas no paramétricas. Las fórmulas para las pruebas t son las siguientes:
 
--   Para muestras independientes: 
+-   Para muestras independientes:
 
 $$t = \frac{(\bar{X}_1 - \bar{X}_2) - D_0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$$
 
--   Para muestras relacionadas: 
+-   Para muestras relacionadas:
 
 $$t = \frac{\bar{D} - D_0}{s_D / \sqrt{n}}$$
 
-Donde: 
+Donde:
 
-- $bar{X}_1$ y $bar{X}_2$ son las medias muestrales
-- $D_0$ es la diferencia en las medias bajo la hipótesis nula
-- $s_1^2$ y $s_2^2$ son las varianzas muestrales
-- $n_1$ y $n_2$ son los tamaños de las muestras
-- $bar{D}$ es la media de las diferencias para muestras relacionadas
-- $s_D$ es la desviación estándar de las diferencias para muestras relacionadas
-- $n$ es el tamaño de la muestra para muestras relacionadas.
+-   $bar{X}_1$ y $bar{X}_2$ son las medias muestrales
+-   $D_0$ es la diferencia en las medias bajo la hipótesis nula
+-   $s_1^2$ y $s_2^2$ son las varianzas muestrales
+-   $n_1$ y $n_2$ son los tamaños de las muestras
+-   $bar{D}$ es la media de las diferencias para muestras relacionadas
+-   $s_D$ es la desviación estándar de las diferencias para muestras relacionadas
+-   $n$ es el tamaño de la muestra para muestras relacionadas.
 
 # Tema 8
 
@@ -382,13 +386,13 @@ Este es un método estadístico que se utiliza para estimar la relación entre d
 
 $$Y = a + bX + \epsilon$$
 
-Donde: 
+Donde:
 
-- $Y$ es la variable dependiente (la variable que queremos predecir). 
-- $X$ es la variable independiente (la variable que utilizamos para hacer la predicción). 
-- $a$ es la ordenada en el origen (el valor de $Y$ cuando $X = 0$). 
-- $b$ es la pendiente de la línea (el cambio en $Y$ por cada unidad de cambio en $X$). 
-- $\epsilon$ es el error o residuo (la diferencia entre el valor observado de $Y$ y el valor predicho por el modelo).
+-   $Y$ es la variable dependiente (la variable que queremos predecir).
+-   $X$ es la variable independiente (la variable que utilizamos para hacer la predicción).
+-   $a$ es la ordenada en el origen (el valor de $Y$ cuando $X = 0$).
+-   $b$ es la pendiente de la línea (el cambio en $Y$ por cada unidad de cambio en $X$).
+-   $\epsilon$ es el error o residuo (la diferencia entre el valor observado de $Y$ y el valor predicho por el modelo).
 
 El objetivo del método de mínimos cuadrados ordinarios es encontrar los valores de $a$ y $b$ que minimizan la suma de los cuadrados de los errores.
 
@@ -460,12 +464,12 @@ Este modelo, también conocido como modelo de regresión múltiple, se utiliza c
 
 $$Y = β_0 + β_1X_1 + β_2X_2 + ... + β_kX_k + \epsilon$$
 
-Donde: 
+Donde:
 
-- $Y$ es la variable dependiente (la variable que queremos predecir). 
-- $X_1, X_2, ..., X_k$ son las variables independientes (las variables que utilizamos para hacer la predicción). 
-- $β_0, β_1, ..., β_k$ son los coeficientes de regresión, que indican el cambio esperado en $Y$ por cada unidad de cambio en las correspondientes variables independientes. 
-- $\epsilon$ es el error o residuo (la diferencia entre el valor observado de $Y$ y el valor predicho por el modelo).
+-   $Y$ es la variable dependiente (la variable que queremos predecir).
+-   $X_1, X_2, ..., X_k$ son las variables independientes (las variables que utilizamos para hacer la predicción).
+-   $β_0, β_1, ..., β_k$ son los coeficientes de regresión, que indican el cambio esperado en $Y$ por cada unidad de cambio en las correspondientes variables independientes.
+-   $\epsilon$ es el error o residuo (la diferencia entre el valor observado de $Y$ y el valor predicho por el modelo).
 
 Aquí tienes un ejemplo genérico del código para ajustar este modelo en R:
 
@@ -483,10 +487,11 @@ summary(modelo)
 
 Por favor reemplaza "Y", "X1", "X2", ..., "Xk" con los nombres de las columnas que deseas comparar y "datos" con el nombre del dataframe que contiene tus datos.
 
--   **Variables dummy:** Una variable dummy (también conocida como variable indicadora o binaria) es una variable que toma el valor 1 o 0 para indicar la presencia o ausencia de una cierta característica o condición. Se utilizan comúnmente en análisis estadísticos y modelos de regresión para incluir información categórica en un modelo matemático. Algunos ejemplos comunes de variables dummy son los siguientes: 
+-   **Variables dummy:** Una variable dummy (también conocida como variable indicadora o binaria) es una variable que toma el valor 1 o 0 para indicar la presencia o ausencia de una cierta característica o condición. Se utilizan comúnmente en análisis estadísticos y modelos de regresión para incluir información categórica en un modelo matemático. Algunos ejemplos comunes de variables dummy son los siguientes:
 
-- Ayuda gubernamental (que tome el valor 1 para los migrantes que reciban ayuda del gobierno local y 0 en caso contrario)
-- Condición de refugiado (que otorgue el valor 1 para los casos de personas refugiadas y 0 para el caso contrario)
+-   Ayuda gubernamental (que tome el valor 1 para los migrantes que reciban ayuda del gobierno local y 0 en caso contrario)
+
+-   Condición de refugiado (que otorgue el valor 1 para los casos de personas refugiadas y 0 para el caso contrario)
 
 En R, no es necesario crear manualmente las variables dummy. Si incluyes un término de regresión en la fórmula y este en los datos es de la clase factor, R lo hace automáticamente. Aquí tienes un ejemplo genérico del código para ajustar un modelo con variables dummy en R:
 
@@ -517,14 +522,11 @@ En esta clase, utilizaremos el libro "Forecast Principles and Practice" de Rob H
 
 Las fechas en R pueden manejarse usando la función as.Date(). El formato estándar es "yyyy-mm-dd". Por ejemplo, para convertir una cadena de caracteres a una fecha, puedes usar
 
-
-
-
 ## Introducción a la biblioteca tsibble para el manejo de series de tiempo:
 
 Un tsibble (tibble de series de tiempo) es una estructura de datos para manejar y analizar datos de series de tiempo en R. Extiende el marco de datos tibble con un índice ordenado y una clave opcional.
 
-```{r, eval = FALSE} 
+```{r, eval = FALSE}
 
 # Ejemplo de creación de un tsibble 
 
@@ -552,11 +554,11 @@ Aplicaremos conceptos estadísticos para analizar los datos de migración como u
 
 # Tema 14
 
-La descomposición de una serie temporal es un procedimiento que permite dividir una serie temporal en tres componentes principales: 
+La descomposición de una serie temporal es un procedimiento que permite dividir una serie temporal en tres componentes principales:
 
-- **Tendencia-ciclo:** Esta componente refleja la progresión a largo plazo de la serie o los patrones cíclicos regulares. Los patrones cíclicos son fluctuaciones que no son de naturaleza estacional, por ejemplo, los ciclos relacionados con el estado de la economía. 
-- **Estacionalidad:** Esta componente muestra la variabilidad estacional en los datos, es decir, las variaciones que se repiten cada temporada. 
-- **Residuo:** Esta componente incluye todo lo que no se captura por la tendencia-ciclo o la estacionalidad.
+-   **Tendencia-ciclo:** Esta componente refleja la progresión a largo plazo de la serie o los patrones cíclicos regulares. Los patrones cíclicos son fluctuaciones que no son de naturaleza estacional, por ejemplo, los ciclos relacionados con el estado de la economía.
+-   **Estacionalidad:** Esta componente muestra la variabilidad estacional en los datos, es decir, las variaciones que se repiten cada temporada.
+-   **Residuo:** Esta componente incluye todo lo que no se captura por la tendencia-ciclo o la estacionalidad.
 
 En R, puedes usar la función `decompose()` para descomponer una serie temporal. Sin embargo, en el paquete `fable`, puedes usar el modelo TSL (Trend, Seasonal, and Level) para descomponer una serie temporal. Aquí te muestro un ejemplo de cómo podrías hacerlo:
 
