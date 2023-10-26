@@ -60,77 +60,124 @@ Aquí te dejo algunos libros que podrían ser útiles para aprender más sobre p
 -   [R for Data Science](https://r4ds.had.co.nz/) por Hadley Wickham & Garrett Grolemund.
 -   [Advanced R](https://adv-r.hadley.nz/) por Hadley Wickham.
 
-## Crear un proyecto en RStudio
-
-Aquí te muestro cómo puedes crear un nuevo proyecto en RStudio: - Abre RStudio. - Haz clic en "File" en la barra de menú superior. - Selecciona "New Project". - Elige la opción que prefieras ("New Directory", "Existing Directory" o "Version Control"), luego sigue las instrucciones en pantalla. - Una vez que hayas configurado tu proyecto, haz clic en "Create Project".
-
 # Tema 2:
 
-## Comprendiendo el entorno de desarrollo RStudio con operaciones básicas
+## Crear un proyecto en RStudio
+
+Aquí te muestro cómo puedes crear un nuevo proyecto en RStudio: - Abre RStudio. - Haz clic en "File" en la barra de menú superior.
+
+-   Selecciona "New Project".
+
+-   Elige la opción que prefieras ("New Directory", "Existing Directory" o "Version Control"), luego sigue las instrucciones en pantalla, una de ella será nombrar tu proyecto, te recomendamos emplees nombre sencillos en minusculas y sin espacios ni simbolos como tildes o la letra ñ, esto para facilitar tu trabajo.
+
+-   Una vez que hayas configurado tu proyecto, haz clic en "Create Project".
+
+Te darás cuenta que estás en tu proyecto si tu pantalla de Rstudio muestra el nombre de tu proyecto en las tres ubicaciones que se muestran en pantalla.
+
+![](captura_2.png){fig-align="center"}
+
+## Comprendiendo el entorno de desarrollo RStudio 
 
 RStudio es un entorno de desarrollo integrado (IDE) para R. Tiene cuatro paneles principales:
 
 -   **Consola (parte inferior izquierda):** Aquí es donde R espera que le des instrucciones. Para ejecutarlas y obtener el resultado, pulsas Enter.
 -   **Editor de sintaxis o Script (parte superior izquierda):** Aquí puedes escribir las instrucciones línea por línea. Las instrucciones las puedes ejecutar una a una o las puedes seleccionar y ejecutar en bloque.
 -   **Entorno/Environment (parte superior derecha):** Aquí se irán registrando los objetos que vayas creando en la sesión de trabajo.
--   **Varias pestañas (parte inferior derecha):** Incluye pestañas como Files, Plots, Packages, Help y Viewer. Cada pestaña tiene su propia función, como visualizar gráficos, gestionar paquetes y buscar ayuda.
+-   **Varias pestañas (parte inferior derecha):** Incluye pestañas como *Files, Plots, Packages, Help y Viewer*. Cada pestaña tiene su propia función, como visualizar gráficos, gestionar paquetes y buscar ayuda.
 
 ## Importación de datos en R desde diferentes fuentes con `readr`
 
-Para leer archivos separados por punto y coma (;), puedes usar la función read_csv2():
+En está ocasión vamos a trabajar con el [Registro Estadístico de Entradas y Salidas Internacionales](https://www.ecuadorencifras.gob.ec/entradas-y-salidas-internacionales/) (ESI) la cual está disponible en la página web del Instituto Nacional de Estadísticas y Censos (INEC). Sin embargo hemos preparado una versión simplifacada de esta fuente de datos para trabajar en esta guía.
+
+```{r}
+library(tidyverse)
+library(gt)
+library(gtsummary)
+
+datos <- read_tsv("../data/data_procesada/tabla_sex_edad_tipo.txt")
+datos <- datos %>% ungroup() %>% 
+  mutate(tip_movi_des = str_remove(tip_movi_des,"s$"))
+```
+
+Nuestros datos están en un archivo plano separados por tabuladores, podemos emplear la función `read_tsv()`:
 
 ```{r, eval = FALSE}
 
-# Cargar el paquete library(readr)
-
-# Leer el archivo CSV
-
-datos <- read_csv2("ruta/del/archivo.csv")
-
-# Para leer archivos separados por tabuladores, puedes usar la función read_tsv():
-
-# Cargar el paquete
-
-library(readr)
-
-# Leer el archivo TSV
-
-datos <- read_tsv("ruta/del/archivo.tsv")
-
+datos <- read_tsv("data/tabla_sexo_edad_tipo.txt")
 ```
+
+Está tabla contiene:
+
+```{r, echo=FALSE}
+tibble(Variable = names(datos),
+       Descripción = c("Año en que de dio el movimiento migratorio",
+                       "Edad de la persona en ese año",
+                       "Sexo de la persona en condición de migración",
+                       "Tipo de movimiento (Entradas salidas)",
+                       "Conteo")) %>% 
+  gt()
+```
+
+Tenemos una tabla de resumen que cuenta a lo largo del periodo 2012-2012 el numero de entradas y salidas del Ecuador, agrupadas por sexo, edad y tipo de movimiento.
+
+Dependiendo de tu archivo deberás emplear una función distinta.
+
+```{r}
+tibble(
+  Separador = c("Coma (,)",
+                "Punto y coma (;)"),
+  Función = c("read_csv()","read_csv2()")
+)
+```
+
+Estas no son las únicas funciones, pero son las más populares.
 
 ## Introducción del concepto de operaciones concatenadas con la pipe
 
-El operador pipe %\>% es útil para concatenar múltiples operaciones con dplyr. Permite escribir una secuencia de operaciones de izquierda a derecha. Por ejemplo:
+El operador pipe `%>%` es útil para concatenar múltiples operaciones que van alterando el estado o forma de un mismo objeto. Permite escribir una secuencia de operaciones de izquierda a derecha para poder mantener el código limpio y ordenado.
+
+Pensemos en un viajero que decide ir subir a la montaña, para llegar allá deberá *manejar* su automóvil hasta la villa, luego deberá *montar* a caballo para poder alcanzar el primer refugio en su trayecto, por ultimo deberá *caminar* por un sendero hasta llegar a la cima.
+
+Escribamos el trayecto del viajero como si fuera código de R.
 
 ```{r, eval = FALSE}
-# Sin usar pipe 
+# Sin usar pipe podemos hacerlo en dos formas:
 
-resultado <- funcion3(funcion2(funcion1(datos)))
+# Forma uno, modificamos el objeto tres veces.
+viajero <- manejar(quien = viajero(),hasta_donde = villa)
+viajero <- montar(quien = viajero(),hasta_donde = refugio)
+viajero <- caminar(quien = viajero(),hasta_donde = cima)
 
-# Usando pipe
+# Forma dos, anidamos funciones
+caminar(quien = montar(
+  quien = manejar(quien = viajero(),
+                  hasta_donde = villa),
+  hasta_donde = refugio),
+  hasta_donde = cima)
 
-resultado <- datos %>% funcion1() %>% funcion2() %>% funcion3()
+# Pero usando la pipe la operación se simplifica
 
+viajero() %>% 
+  manejar(hasta_donde = villa) %>% 
+  montar(hasta_donde = refugio)
+  caminar(hasta_donde = cima)
 
 ```
 
-Aquí tienes otro ejemplo que muestra cómo se pueden encadenar varias funciones con la pipe para realizar un análisis de datos:
+Aquí tienes otro ejemplo que muestra cómo se pueden encadenar varias funciones con la pipe para realizar un análisis de datos, vamos a filtrar los datos para las mujeres y vamos a ver por tipo de movimiento, cuantas migraron en el periodo:
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # Usando pipe para encadenar varias funciones en R
 
 datos %>% 
-  filter(variable1 > 50) %>% 
-  select(variable2, variable3) %>% 
-  summarise(media = mean(variable3)) 
+  filter(sex_migr_des == "Mujer") %>% 
+  group_by(tip_movi_des) %>% 
+  summarise(n = sum(n)) 
 ```
-
-En este ejemplo, primero se filtran las filas de datos donde variable1 es mayor que 50. Luego, se seleccionan variable2 y variable3. Finalmente, se calcula la media de variable3. Todo esto se hace en una sola línea gracias al operador pipe `%>%`.
 
 # Tema 3
 
-En las dos primeras clases, aprendiste sobre R, tidyverse y cómo importar y manejar datos. Ahora, vamos a aplicar esos conocimientos para entender la importancia del análisis de datos migratorios.
+En los dos primeros temas, aprendiste sobre R, tidyverse y cómo importar y manejar datos. Ahora, vamos a aplicar esos conocimientos para entender la importancia del análisis de datos migratorios.
 
 Conceptos claves sobre la migración:
 
