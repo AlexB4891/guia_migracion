@@ -177,9 +177,7 @@ datos %>%
 
 # Tema 3
 
-En los dos primeros temas, aprendiste sobre R, tidyverse y cómo importar y manejar datos. Ahora, vamos a aplicar esos conocimientos para entender la importancia del análisis de datos migratorios.
-
-Conceptos claves sobre la migración:
+En las cheat sheets anteriores aprendiste algunos conceptos importantes como la creación de proyectos, la lectura de datos y la concatenación de operaciones con la _pipe_. El material que tienes en tus manos es producto de esfuerzos multiples del Centro de Investigación Estadística ERGOSTATS y la Fundación Datalat. Juntos hemos preparado un glosario d conceptos claves si te interesa la investigación de los fenómenos migratorios. 
 
 -   *Corrientes o flujos migratorios:* Se refiere a la cantidad de personas migrantes que se mueven hacia otro lugar (o desde otro) para establecerse.
 -   *Desplazados:* Personas que han abandonado su lugar de origen por temor ante peligros diferentes a los que amparan el estatuto de personas refugiadas.
@@ -191,7 +189,7 @@ Conceptos claves sobre la migración:
 -   *Persona refugiada:* Personas que "con fundados temores de ser perseguida por motivos de raza, religión, nacionalidad, pertenencia a determinado grupo social u opiniones políticas, se encuentre fuera del país de su nacionalidad y no pueda o, a causa de dichos temores, no quiera acogerse a la protección de tal país".
 -   *Protección:* Mecanismos (internacional o temporal) para proteger la integridad de las personas.
 
-Iniciativas para abordar el tema de la migración
+Puedes aprender más sobre los fenómenos migratorios en las páginas oficiales de las siguientes iniciativas que abordan este complejo tema:
 
 -   La Plataforma R4V es una iniciativa que coordina los esfuerzos para responder al desplazamiento de personas refugiadas y migrantes. Puedes descargar y explorar los datos proporcionados por la plataforma R4V desde su [sitio web oficial](https://www.r4v.info/es/home).
 
@@ -199,15 +197,17 @@ Iniciativas para abordar el tema de la migración
 
 -   MIDAS es un sistema desarrollado por la OIM que permite a los Estados mejorar la gestión de sus operaciones fronterizas. Puedes encontrar más detalles en el sitio web oficial [de la OIM](https://programamesoamerica.iom.int/es/inauguracion-MIDAS-dos-nuevos-puestos).
 
+> Pregunta para Nathy: ¿Incluimos esta sección en las cheat sheets?
+
 # Tema 4
 
 ## Variables aleatorias y sus momentos en el contexto de la migración
 
 Una variable aleatoria es una función que asigna un valor numérico a cada resultado en el espacio muestral de un experimento aleatorio. Los momentos de una variable aleatoria son los valores esperados de ciertas funciones de la variable aleatoria. Aquí te presento cuatro ejemplos de variables aleatorias y sus momentos en el contexto de la migración:
 
--   **Variable aleatoria "Edad al emigrar":** Esta variable puede tomar valores como la edad exacta en años que tenía una persona cuando emigró. Un momento relevante podría ser la media o valor esperado, que indicaría la edad promedio al emigrar.
--   **Variable aleatoria "Número de migrantes por familia":** Esta variable puede tomar valores como el número total de miembros de una familia que han emigrado. Un momento relevante podría ser la varianza, que indicaría cuánto varía el número de migrantes por familia.
--   **Variable aleatoria "Duración de la migración":** Esta variable puede tomar valores como el número total de días que duró el proceso de migración. Un momento relevante podría ser la mediana, que indicaría la duración típica de la migración.
+-   **Variable aleatoria "Edad al emigrar":** Esta variable puede tomar valores como la edad exacta en años que tenía una persona cuando emigró. Un momento relevante podría ser la media o valor esperado, que indicaría la edad promedio al emigrar en un determinado año. 
+-   **Variable aleatoria "Número de inmigrantes por día":** Esta variable puede tomar valores como el número total de inmigrantes en los distintos días del año. Un momento relevante podría ser la varianza, que indicaría cuánto varía el número de migrantes por día.
+-   **Variable aleatoria "Número de egrantes por destino":** Esta variable puede tomar valores como el número total de emigrantes a un determinado destino. Un momento relevante podría ser la mediana o percentil 50, que indicaría la migración típica a los destinos del mundo desde el Ecuador.
 -   **Variable aleatoria "País destino":** Esta es una variable categórica que puede tomar valores como los nombres de los países a los que las personas emigran. Un momento relevante podría ser la moda, que indicaría el país destino más común.
 
 ## Variables numéricas y categóricas en el contexto de la migración
